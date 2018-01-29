@@ -1,0 +1,91 @@
+<!--search.wxml-->
+<view class="container">
+  <view class="searchBox">
+      <view class="searchCon">
+        <icon class='searchIcon'></icon>
+        <view class='inputWord'>请输入商品关健字</view>        
+      </view>
+      <view class="cancelbtn">取消</view>
+    </view>
+
+    <view class="proBox">
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>  
+        <view class="proTxt">
+          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+          <view class="priceCon">
+            ￥<text class='price'>168.</text>00
+          </view>
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+        <view class="proTxt">
+          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+          <view class="priceCon">
+            ￥<text class='price'>168.</text>00
+          </view>
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+        <view class="proTxt">
+          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+          <view class="priceCon">
+            ￥<text class='price'>168.</text>00
+          </view>
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+        <view class="proTxt">
+          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+          <view class="priceCon">
+            ￥<text class='price'>168.</text>00
+          </view>
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+        <view class="proTxt">
+          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+          <view class="priceCon">
+            ￥<text class='price'>168.</text>00
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="more">
+      <view class='lineBot'>
+        <text class='textBot'>没有更多啦</text>
+      </view>
+    </view>
+
+</view>
+
+<!-- 搜索无结果 -->
+<view class="container" style='display:none;'>
+  <view class="searchBox">
+     <view class="searchCon">
+      <icon class='searchIcon'></icon>
+      <input class='inputWord' value="苹果"></input>
+      <view class='searchClose'>×</view>
+    </view>
+    <view class="cancelbtn">取消</view>
+  </view>
+  <view class='noSearchCon'>没有找到相关的商品～</view>
+</view>
+
+<!-- 搜索-输入 -->
+<view class="container" style='display:none;'>
+  <view class="searchBox">
+     <view class="searchCon">
+      <icon class='searchIcon'></icon>
+      <input class='inputWord' value="苹果"></input>
+      <view class='searchClose'>×</view>
+    </view>
+    <view class="cancelbtn">取消</view>
+  </view>
+  <view class='noSearchCon'>点击搜索开始</view>
+</view>

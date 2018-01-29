@@ -1,0 +1,3 @@
+/**app.wxss**/
+page{height:100%;background:#f8f8f8;}
+.container{background:#f8f8f8;overflow:hidden;}

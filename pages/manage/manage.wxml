@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="manageTop">
+    <view class="manageTopImg"><image class="logoImg" src="https://style.org.hc360.com/images/microMall/program/mGrayLogo.png" ></image></view>
+    <text class="userName">请授权登录</text>
+  </view>
+<view class="manageTop">
+    <view class="manageTopImg"><image class="logoImg" src="https://style.org.hc360.com/images/microMall/program/mLogo2.png" ></image></view>
+    <text class="userName">微信昵称</text>
+  </view>
+  <view class="manageList">
+    <view class="orderCon">
+      <text class="myOrder">我的订单</text>
+      <text class="moreOrder">查看全部订单</text>
+    </view>
+    <view class="orderState">
+      <view class="fahuo">待发货</view>
+      <view class="shouhuo">待收货</view>
+      <view class="complete">已完成</view>
+    </view>
+    <view class="shopCart">
+      <text class="shopCartCon">购物车</text>
+    </view>
+    <view class="coupons">
+      <text class="couponsCon">我的优惠券</text>
+    </view>
+    <view class="qqService">
+      <text class="qqServiceCon">联系客服</text>
+    </view>
+    <view class="address">
+      <text class="addressCon">我的收货地址</text>
+    </view>
+    <view class="serTel">
+      <text class="serTelCon">客服电话</text>
+      <text class="serTelRig">400-6360-888</text>
+    </view>
+  </view>
+</view>

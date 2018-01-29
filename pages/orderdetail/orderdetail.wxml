@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="wxAddressBox">
+    <view class="addressLeft">
+        <view class="addressUser">张先生<text class="addressTel">18767897867</text></view>
+        <text class="addressFont">中国 浙江省 嘉兴市 海盐县 建台夕照测试建台夕照测试建台夕照测</text>
+    </view>
+  </view>
+  <view class="orderContent">
+    <view class="orderListCon">
+        <view class="orderConTit"><text class="orderState">待卖家发货</text></view> 
+        <view class="orderConTit"><text class="orderState">已完成</text></view> 
+        <view class="orderConTit">
+            <text class="orderState">卖家已发货</text>
+            <view class="dshuoBtn">确认收货</view>
+        </view> 
+        <view class="dOrderCon">
+            <view class="orderImg"><image class="orderImgCon" src="http://img000.hc360.cn/k3/M00/87/C3/wKhQx1pNhXuEUpI0AAAAAO-Ey-E264.jpg"></image></view> 
+            <view class="orderImgRig">
+                <view class="orderName"><view class="oName">亚津JS-0488 CD盒亚津JS-0488 CD盒亚津JS-0488 CD盒亚津JS-0488 CD盒亚津JS-0488 CD盒亚津JS-0488 CD盒whctest201801101530</view></view> 
+                <view class="oListPrice"><text class="oListPrice_1">¥ 0.10</text><text class="oListNum">X10</text></view>
+            </view>
+        </view>
+        <view class="dOrderConBot">
+            <view class="orderDetail2">
+                <view class="totalPrice"><text class="totalPriceFont">商品总额</text><text class="totalPriceNum">¥ 1</text></view>
+                <view class="freightCon"><text class="freightFont">运费</text><text class="freightPrice">¥ 0.00</text></view>
+            </view>
+        </view>
+        <view class="orderDetailBot2">应付总额：<text class="totalPriceCon">¥ 1.00</text></view>
+        <view class="dOrderConBot">
+            <view class="orderDetail2">
+                <view class="totalPrice"><text class="totalPriceFont">订单编号</text><text class="totalPriceNum">13259503447011525211</text></view>
+                <view class="freightCon"><text class="freightFont">下单时间</text><text class="freightPrice">2018/01/10  15:26:31</text></view>
+            </view>
+        </view>
+        <view class="courierBox">
+            <view class="courierList"><text class="courierLeft">物流公司：</text><text class="courierRig">中通快递</text></view>
+            <view class="courierList"><text class="courierLeft">物流单号：</text><text class="courierRig">87944974578585</text></view>
+            <view class="courierList"><text class="courierLeft">物流公司：</text><text class="courierRig">中通快递</text></view>
+            <view class="courierList"><text class="courierLeft">备注：</text><text class="courierRig">中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递中通快递</text></view>
+        </view>
+    </view>
+  </view>
+</view>

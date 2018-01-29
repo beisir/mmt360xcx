@@ -1,0 +1,103 @@
+<!--pages/myorder/myorder.wxml-->
+<view class='container'>
+  <view class='orderListBox'>
+    <view class='wxOrderTit'>
+      <view class='title orderCur'>全部</view>
+      <view class='title'>待发货</view>
+      <view class='title'>待收货</view>
+      <view class='title'>已完成</view>
+    </view>
+
+    <view class='orderContent'>
+      <!--无订单-->
+      <view class='orderNo'>
+        <text>暂无订单</text>
+      </view>
+      <!--待收货-->
+      <view class='orderListCon'>
+        <view class='orderConTit'>
+          <view class='comName'>
+            <image class='comImg' src="https://style.org.hc360.com/images/microMall/program/headIcon.png"></image>
+            东莞市汉昆幼童用品有限公司
+          </view>
+          <text class='orderState'>待收货</text>
+        </view>
+        <view class='orderPro'>
+          <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image></view>
+          <view class='orderImgRig'>
+            <text class="orderName">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+            <view class='oListPrice'>
+              <text class='oListText'>￥350000</text>
+              <text class='oListText'>x1</text>
+            </view>
+          </view>
+        </view>
+        <view class='orderBot'>
+          <view class='wxOrderBot'>
+            <text class='allpro'>共1件商品</text>
+            <text class='allPrice'>合计：<text>¥1.00</text></text>
+          </view>
+          <view class='logisticsBtn'>
+            <text class='confirmBtn'>确认收货</text>
+          </view>
+        </view>
+      </view>
+
+      <!--已完成-->
+      <view class='orderListCon'>
+        <view class='orderConTit'>
+          <view class='comName'>
+            <image class='comImg' src="https://style.org.hc360.com/images/microMall/program/headIcon.png"></image>
+            东莞市汉昆幼童用品有限公司
+          </view>
+          <text class='orderState'>已完成</text>
+        </view>
+        <view class='orderPro'>
+          <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image></view>
+          <view class='orderImgRig'>
+            <text class="orderName">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+            <view class='oListPrice'>
+              <text class='oListText'>￥350000</text>
+              <text class='oListText'>x1</text>
+            </view>
+          </view>
+        </view>
+        <view class='orderBot'>
+          <view class='wxOrderBot'>
+            <text class='allpro'>共1件商品</text>
+            <text class='allPrice'>合计：<text>¥1.00</text></text>
+          </view>
+        </view>
+      </view>
+
+      <!--待发货-->
+      <view class='orderListCon'>
+        <view class='orderConTit'>
+          <view class='comName'>
+            <image class='comImg' src="https://style.org.hc360.com/images/microMall/program/headIcon.png"></image>
+            东莞市汉昆幼童用品有限公司
+          </view>
+          <text class='orderState'>待发货</text>
+        </view>
+        <view class='orderPro'>
+          <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image></view>
+          <view class='orderImgRig'>
+            <text class="orderName">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+            <view class='oListPrice'>
+              <text class='oListText'>￥350000</text>
+              <text class='oListText'>x1</text>
+            </view>
+          </view>
+        </view>
+        <view class='orderBot'>
+          <view class='wxOrderBot'>
+            <text class='allpro'>共1件商品</text>
+            <text class='allPrice'>合计：<text>¥1.00</text></text>
+          </view>
+        </view>
+      </view>
+      
+
+    </view>
+  </view>
+</view>

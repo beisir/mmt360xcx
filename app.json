@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shopcart/shopcart",
+    "pages/class/class",
+    "pages/search/search",
+    "pages/model_1/model",
+    "pages/model_2/model",
+    "pages/myorder/myorder",
+    "pages/confirmorder/confirmorder",
+    "pages/detail/detail",
+    "pages/manage/manage",
+    "pages/orderdetail/orderdetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "韩熙服饰",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ff3b3b",
+    "borderStyle": "#e4e4e4",
+    "backgroundColor": "#fff",
+    "font-size": "22rpx",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/ficonIndex1.png",
+        "selectedIconPath": "image/ficonIndex2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopcart/shopcart",
+        "iconPath": "image/ficonCart1.png",
+        "selectedIconPath": "image/ficonCart2.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/manage/manage",
+        "iconPath": "image/ficonMy1.png",
+        "selectedIconPath": "image/ficonMy2.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true
+}

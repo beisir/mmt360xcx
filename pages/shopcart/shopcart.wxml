@@ -1,0 +1,318 @@
+<!--shopcart.wxml-->
+
+<!-- par1 左滑删除 -->
+<view class="container" style="display:none;">
+  <view class="operation">编辑</view>
+  <view class="orderBox">
+    <view class="orderCon">
+      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+    <view class="orderCon delpad">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="amountBox">
+          <view class="amountDown"></view>
+          <label class='number'>
+            <input class='numInput' type="number" value='5'></input>
+          </label>
+          <view class="amountUp"></view>
+        </view>
+      </view>
+      <view class="delregion">删除</view>
+    </view>
+
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+    
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="allOrder">
+    <view class="choice_2"><label class='choice_2_input'></label>全选</view>
+    <view class="total">
+      合计：
+        <view class='allprice_1'>
+          ￥<text class='allprice'>168.</text>00
+        </view>
+    </view>
+    <view class="buyBtn"><a href="#">立即购买</a></view>
+  </view>
+
+</view>
+
+<!-- par2 编辑商品 -->
+<view class="container" style="display:none;">
+  <view class="operation">完成</view>
+  <view class="orderBox">
+    <view class="orderCon">
+      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="amountBox">
+          <view class="amountDown amountReduce"></view>
+          <label class='number'>
+            <input class='numInput' type="number" value='0'></input>
+          </label>
+          <view class="amountUp"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="amountBox">
+          <view class="amountDown"></view>
+          <label class='number'>
+            <input class='numInput' type="number" value='5'></input>
+          </label>
+          <view class="amountUp"></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="amountBox">
+          <view class="amountDown amountReduce"></view>
+          <label class='number'>
+            <input class='numInput' type="number" value='0'></input>
+          </label>
+          <view class="amountUp"></view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="amountBox">
+          <view class="amountDown amountReduce"></view>
+          <label class='number'>
+            <input class='numInput' type="number" value='0'></input>
+          </label>
+          <view class="amountUp"></view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="allOrder">
+    <view class="seleCur_2"><label class='seleCur_2_input'></label>全选</view>
+    <view class="buyBtn buyBtnClick">删除</view>
+  </view>
+
+</view>
+
+<!-- par3 商品列表 -->
+<view class="container" style='display:none;'>
+  <view class="operation">编辑</view>
+  <view class="orderBox">
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+    
+    <view class="orderCon">
+      <view class="choice"><label class='choiceInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="allOrder">
+    <view class="choice_2"><label class='choice_2_input'></label>全选</view>
+    <view class="total">
+      合计：
+        <view class='allprice_1'>
+          ￥<text class='allprice'>168.</text>00
+        </view>
+    </view>
+    <view class="buyBtn"><a href="#">立即购买</a></view>
+  </view>
+
+</view>
+
+<!-- par4 购买商品 -->
+<view class="container" >
+  <view class="operation">编辑</view>
+  <view class="orderBox">
+    <view class="orderCon">
+      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+    <view class="orderCon">
+      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+    <view class="orderCon">
+      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+    
+    <view class="orderCon">
+      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='orderRtxt'>
+        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="orderPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="allNom">X1</view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="allOrder">
+    <view class="seleCur_2"><label class='seleCur_2_input'></label>全选</view>
+    <view class="total_2">
+      <view class="priceCon_2">
+        合计：
+        <view class='allprice_2'>
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+      <text class="freight">不含运费</text>
+    </view>
+    <view class="buyBtn buyBtnClick"><a href="#">立即购买</a></view>
+  </view>
+
+</view>
+
+<!-- part5 空 购物车 -->
+ <view class="container" style="display:none;">
+  <view class="noOrder">您还未添加商品～</view>
+</view>

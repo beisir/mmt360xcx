@@ -1,0 +1,25 @@
+.manageTop{ height:282rpx; background: url(https://style.org.hc360.com/images/microMall/program/manageTopBg.png) 0 0; background-size: 750rpx 340rpx; padding-top: 58rpx;}
+.manageTopImg{ border:6rpx solid #ff8989;width:135rpx;height:135rpx;margin: 0 auto; border-radius: 50%;overflow: hidden;}
+.userName{text-align:center; color:#fff; font-size:34rpx; display: block; padding:26rpx 30rpx 0;}
+.logoImg{ max-height: 135rpx; max-width: 135rpx;}
+.manageList{overflow:hidden;}
+.orderCon,.shopCart,.coupons,.qqService,.address,.serTel{height: 90rpx; line-height: 90rpx; border-bottom: 1rpx solid #ddd; padding: 0 26rpx; position: relative; background: #fff;}
+.myOrder,.shopCartCon,.couponsCon,.qqServiceCon,.addressCon,.serTelCon{ float: left; font-size:32rpx; color: #333; padding-left: 70rpx; display: block; line-height: 90rpx;background: url(https://style.org.hc360.com/images/microMall/program/detailIco2.png) no-repeat; width: 100%; height: 90rpx; box-sizing:border-box;}
+.myOrder{background-position:-267rpx 26rpx;background-size: 300rpx 600rpx; width: 50%;}
+.shopCartCon{background-position:-257rpx -70rpx;background-size: 300rpx 600rpx;}
+.couponsCon{background-position:-260rpx -161rpx;background-size: 300rpx 600rpx;}
+.qqServiceCon{background-position:-260rpx -253rpx;background-size: 300rpx 600rpx;}
+.addressCon{background-position:-259rpx -344rpx;background-size: 300rpx 600rpx;}
+.serTelCon{background-position:-259rpx -433rpx;background-size: 300rpx 600rpx;}
+.shopCartCon:after,.couponsCon:after,.qqServiceCon:after,.addressCon:after,.shopCartCon:after{content:"";height:90rpx;width:40rpx; display: block; background: #ff0000; position: absolute;background: url(https://style.org.hc360.com/images/microMall/program/detailIco2.png) -260rpx -532rpx no-repeat; background-size: 300rpx 600rpx;top:0;right: 35rpx;}
+.moreOrder{ float: right; color: #999; font-size:30rpx; position: relative; display: block;height:90rpx; padding-right: 40rpx; text-align: right; line-height: 90rpx;}
+.moreOrder:after{content:"";height:90rpx;width:40rpx; display: block; background: #ff0000; position: absolute;background: url(https://style.org.hc360.com/images/microMall/program/detailIco2.png) -260rpx -532rpx no-repeat; background-size: 300rpx 600rpx;top:0;right:0;}
+.orderState{height:180rpx; background:#fff; margin-bottom: 20rpx;}
+.fahuo,.shouhuo,.complete{float: left;width:33.333%; text-align:center; font-size: 24rpx; color: #666;}
+.fahuo:before,.shouhuo:before,.complete:before{content:"";width: 52rpx; height:52rpx; margin:45rpx auto 15rpx; background: #ff0000; display: block;background: url(https://style.org.hc360.com/images/microMall/program/detailIco2.png) no-repeat;}
+.fahuo:before{ background-position:-190rpx 10rpx;background-size: 300rpx 600rpx;}
+.shouhuo:before{ background-position:-113rpx 10rpx;background-size: 300rpx 600rpx;}
+.complete:before{ background-position:-118rpx -62rpx;background-size: 300rpx 600rpx;}
+.serTelCon{width: 50%; float: left;}
+.serTelRig{float: right; text-align: right; color: #999; font-size:30rpx;}
+.manageList{border-bottom:160rpx solid #f8f8f8;}

@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="signBox">
+    <view class="searchBox">
+      <icon class='searchIcon'></icon>
+      <view class='searchInput'>请输入商品关健字</view>
+    </view>
+    <view><image class="signLogo" src='https://style.org.hc360.com/images/microMall/program/cLogo.jpg'></image></view>
+    <text class='signLogoName'>韩熙服饰旗舰店</text>
+  </view>
+  
+  <view class="tabTt">
+    <view class="tabTitle"><text class='titleCur'>首页</text></view>
+    <view class="tabTitle"><text>最新产品</text></view>
+    <view class="tabTitle"><text>分部分类</text></view>
+  </view>
+
+  <view class='proBox'>
+    <view class="proTitle">
+      <text class='proTitleCon'>商品推荐</text>
+    </view>
+    <view class="proList">
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>  
+        <text class="protil">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <view class="price">
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg2.jpg'></image></view>
+        <text class="protil">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <view class="price">
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg3.jpg'></image></view>
+        <text class="protil">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <view class="price">
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image></view>
+        <text class="protil">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <view class="price">
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg2.jpg'></image></view>
+        <text class="protil">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <view class="price">
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+      <view class='proCon'>
+        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg3.jpg'></image></view>
+        <text class="protil">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <view class="price">
+          ￥<text class='allprice'>168.</text>00
+        </view>
+      </view>
+    </view>
+
+    <view class="more">
+      <view class='lineBot'>
+        <text class='textBot'>没有更多了</text>
+      </view>
+    </view>
+
+  </view>
+
+</view>

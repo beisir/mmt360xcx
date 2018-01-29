@@ -1,0 +1,37 @@
+<!--pages/confirmorder/confirmorder.wxml-->
+<view class="container">
+  <view class='addressBox'>
+    <text>您还没有收货地址，请新增地址</text>
+  </view>
+  <view class='proBox'>
+    <view class='proCon'>
+      <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+      <view class='proRtxt'>
+        <text class="proTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
+        <text class="proColour">颜色：S</text>
+        <view class="prorPrice">
+            ￥<text class='price'>168.</text>00
+        </view>
+        <view class="amountBox">
+          <view class="amountDown amountReduce"></view>
+          <label class='number'>
+            <input class='numInput' type="number" value='0'></input>
+          </label>
+          <view class="amountUp"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='total'>
+    <view class='proNom'>共1件商品</view>
+    <view class="priceBox">
+      合计：
+      <view class='priceCon'>
+        ￥<text class='price'>168.</text>00
+      </view>
+      （含运费<text class="freight">￥0.00</text>）
+    </view>    
+  </view>
+
+</view>

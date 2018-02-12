@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "我的订单"
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "oder-list": "/components/oderList/oderList"
+  }
 }

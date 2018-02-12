@@ -1,0 +1,31 @@
+/**index.wxss**/
+.signBox{background:url(https://style.org.hc360.com/images/microMall/program/bnBg_3.jpg) no-repeat;background-size:100%;width:100%;height:215rpx;position:relative;}
+.searchBox{position:absolute;left:25rpx;top:15rpx;background:#fff;width:700rpx;height:65rpx;border-radius:30rpx;}
+.searchIcon{width:29rpx;height:28rpx;background:url(https://style.org.hc360.com/images/microMall/program/sicon.png) no-repeat;background-size:29rpx 28rpx;display:inline-block;margin:0 20rpx 0 20rpx; vertical-align: middle;}
+.cur{
+  width: 100rpx;
+  height: 4rpx;
+  background: #004db1;
+  position: absolute; 
+  bottom: -4rpx;
+  transition: transform .3s; 
+}
+.searchInput{font-size:30rpx;color:#ccc;line-height:65rpx;display:inline-block;}
+.signBox a{color:#ccc;text-decoration:none;display:inline-block;}
+.signLogo{width:80rpx;height:80rpx;position:absolute;left:25rpx;bottom:20rpx;border-radius:10px;}
+.signLogoName{position:absolute;left:125rpx;bottom:40rpx;font-size:40rpx;color:#fff;}
+
+.tabTt{clear:both;padding:0 25rpx;height:85rpx;line-height:85rpx;border-bottom:4rpx solid #fff;background:#fff;position: relative;}
+.tabTitle{float:left;width:50%;text-align:center;color:#333;font-size:30rpx;}
+.tabTitle a{color:#333;text-decoration:none;}
+.titleCur{/*border-bottom:4rpx solid #ff3b3b;*/padding:0 15rpx;display:inline-block;}
+.active{
+  color:#004db1;
+}
+
+.proBox{clear:both;background:#f8f8f8;border-top:1rpx solid #ddd;overflow:hidden;}
+.proTitle{text-align:center;height:114rpx;line-height:114rpx;color:#004db1;font-size:34rpx;}
+.proTitleCon{width:352rpx;height:114rpx;background:url(https://style.org.hc360.com/images/microMall/program/ttbg_3.png) no-repeat content-box 0;background-size:352rpx 17rpx;display:block;margin:0 auto;text-align:center;}
+.more{clear:both;height:60rpx;text-align:center;font-size:30rpx;color:#ddd;}
+.lineBot{width:348rpx;height:20rpx;border-bottom:1rpx solid #ddd;margin:0 auto;}
+.textBot{width:190rpx;height:40rpx;text-align:center;background:#f8f8f8;display:block;margin:0 auto;}

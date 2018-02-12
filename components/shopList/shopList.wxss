@@ -1,0 +1,9 @@
+.proList{clear:both;padding:0 16rpx 15rpx;overflow: hidden;}
+.proCon{float:left;width:350rpx;height:500rpx;background:#fff;overflow:hidden;margin-bottom:20rpx;}
+.proCon:nth-child(even) {float: right;}
+.proImgCon{width:350rpx;height:350rpx;overflow:hidden;margin-bottom:10rpx;}
+.proImg{width:350rpx;height:350rpx;border-top-left-radius:10rpx;border-top-right-radius:10rpx;}
+.protil{height:72rpx;font-size:28rpx;color:#333;line-height:36rpx;padding:0 20rpx;display:inline-block;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.protil a{color:#333;text-decoration:none;}
+.price{color:#ff3b3b;font-size:24rpx;padding:0 20rpx;}
+.allprice{font-size:34rpx;display:inline-block;}

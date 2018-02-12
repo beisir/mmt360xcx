@@ -1,60 +1,18 @@
-<!--pages/class/class.wxml-->
+<wxs src="../../utils/filter.wxs" module="tools" />
 <view class="container">
   <view class="proList">
-    <view class='proCon'>
-      <view class='proImgCon'>
-        <image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image>
-      </view>   
-      <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-      <view class="price">
-        ￥<text class='allprice'>168.</text>00
+    <block wx:for="{{lstResult}}" wx:key="{{index}}">
+      <view class='proCon' data-bcid="{{item.bcid}}" bindtap="goDetail">
+        <view class='proImgCon'>
+          <!-- <image class='proImg' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822'></image> -->
+           <image class='proImg' src='{{item.bcPicPath}}' data-index="{{index}}"> </image> 
+        </view>   
+        <text class="til">{{item.title}}</text>
+        <view class="price">
+          ￥<text class='allprice'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}.
+        </view>
       </view>
-    </view>
-    <view class='proCon'>
-      <view class='proImgCon'>
-        <image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg2.jpg'></image>
-      </view> 
-      <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-      <view class="price">
-        ￥<text class='allprice'>168.</text>00
-      </view>
-    </view>
-    <view class='proCon'>
-      <view class='proImgCon'>
-        <image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg3.jpg'></image>
-      </view> 
-      <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-      <view class="price">
-        ￥<text class='allprice'>168.</text>00
-      </view>
-    </view>
-    <view class='proCon'>
-      <view class='proImgCon'>
-        <image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image>
-      </view> 
-      <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-      <view class="price">
-        ￥<text class='allprice'>168.</text>00
-      </view>
-    </view>
-    <view class='proCon'>
-      <view class='proImgCon'>
-        <image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg2.jpg'></image>
-      </view> 
-      <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-      <view class="price">
-        ￥<text class='allprice'>168.</text>00
-      </view>
-    </view>
-    <view class='proCon'>
-      <view class='proImgCon'>
-        <image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg4.jpg'></image>
-      </view> 
-      <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-      <view class="price">
-        ￥<text class='allprice'>168.</text>00
-      </view>
-    </view>
+    </block>
   </view>
   <view class="more"><view><text>没有更多啦</text></view></view>
 </view>

@@ -1,0 +1,30 @@
+<!--pages/address/address.wxml-->
+<view class="container">
+  <view class='addressBox'>
+    <block wx:for="{{addressList}}" wx:key="{{index}}">
+    <view class='addressCon' bindtap="goback">
+      <view class='nameTel'>
+        <text class='nameCon'>{{item.userName}}</text>
+        <text class='telCon'>{{item.telNumber}}</text>
+      </view>
+      <view class='addressTxt'>
+        {{item.address}}
+      </view>
+      <view class='operationBox'>
+        <view class="choice" catchtap="selectChoice" data-index="{{index}}">
+          <label class="choiceInput {{item.status ? 'seleInput' :''}}"></label>默认地址</view>
+        <view class='operationBtn' bindtap="dleAddress" data-index="{{index}}">
+          <icon class='delBtn'></icon>删除</view>
+        <!-- <view class='operationBtn' bindtap="editAddress" data-index="{{index}}">
+        <icon class='editBtn'></icon>编辑
+        </view> -->
+      </view>
+    </view>
+  </block>    
+  </view>
+
+  <view class='newAddress'>
+    <view class='addressBtn' bindtap="addAddress">添加新地址</view>
+  </view>
+
+</view>

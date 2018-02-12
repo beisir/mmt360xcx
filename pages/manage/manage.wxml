@@ -1,35 +1,36 @@
 <view class="container">
-  <view class="manageTop">
-    <view class="manageTopImg"><image class="logoImg" src="https://style.org.hc360.com/images/microMall/program/mGrayLogo.png" ></image></view>
-    <text class="userName">请授权登录</text>
+  <view class="manageTop" bindtap="onLoad">
+    <view class="manageTopImg" bindtap="authorization"><image class="logoImg" src="{{avatarUrl ? avatarUrl :'https://style.org.hc360.com/images/microMall/program/mGrayLogo.png'}}" ></image></view>
+    <text class="userName">{{nickName ? nickName : '请授权登录'}}</text>
   </view>
-<view class="manageTop">
+<!-- <view class="manageTop">
     <view class="manageTopImg"><image class="logoImg" src="https://style.org.hc360.com/images/microMall/program/mLogo2.png" ></image></view>
     <text class="userName">微信昵称</text>
-  </view>
+  </view> -->
   <view class="manageList">
     <view class="orderCon">
       <text class="myOrder">我的订单</text>
-      <text class="moreOrder">查看全部订单</text>
+      <navigator class="moreOrder" url="/pages/myorder/myorder?order=0">查看全部订单</navigator>
     </view>
     <view class="orderState">
-      <view class="fahuo">待发货</view>
-      <view class="shouhuo">待收货</view>
-      <view class="complete">已完成</view>
+      <navigator class="fahuo" url="/pages/myorder/myorder?order=1">待发货</navigator>
+      <navigator class="shouhuo" url="/pages/myorder/myorder?order=2">待收货</navigator>
+      <navigator class="complete" url="/pages/myorder/myorder?order=3">已完成</navigator>
     </view>
-    <view class="shopCart">
+    <navigator class="shopCart" url="/pages/shopcart/shopcart" open-type="switchTab">
       <text class="shopCartCon">购物车</text>
-    </view>
-    <view class="coupons">
+    </navigator>
+    <!-- <view class="coupons">
       <text class="couponsCon">我的优惠券</text>
-    </view>
+    </view> -->
     <view class="qqService">
       <text class="qqServiceCon">联系客服</text>
+      <button open-type="contact" style="opacity:0;width:100%;height:100%;position:absolute;top:0;left:0;"></button>
     </view>
-    <view class="address">
+    <navigator class="address" url="/pages/address/address">
       <text class="addressCon">我的收货地址</text>
-    </view>
-    <view class="serTel">
+    </navigator>
+    <view class="serTel" bindtap="calling">
       <text class="serTelCon">客服电话</text>
       <text class="serTelRig">400-6360-888</text>
     </view>

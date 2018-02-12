@@ -1,12 +1,14 @@
 /* search.wxss */
 .searchBox{border-top:1rpx solid #ddd;background:#fff;height:85rpx;padding:20rpx 25rpx 0 25rpx;display:flex;}
-.searchCon{margin-left:25rpx;background:#f8f8f8;width:87%;height:65rpx;border-radius:30rpx;position:relative;}
-.searchIcon{float:left;width:29rpx;height:28rpx;background:url(https://style.org.hc360.com/images/microMall/program/sicon.png) no-repeat;background-size:29rpx 28rpx;margin:18rpx 20rpx 0 20rpx; vertical-align: middle;}
-.inputWord{width:450rpx;height:65rpx;font-size:30rpx;color:#333;line-height:65rpx;display:inline-block;}
+.searchCon{/*margin-left:25rpx;*/background:#f8f8f8;width:100%;height:65rpx;border-radius:30rpx;position:relative;}
+/* .searchIcon{float:left;width:29rpx;height:28rpx;background:url(https://style.org.hc360.com/images/microMall/program/sicon.png) no-repeat;background-size:29rpx 28rpx;margin:18rpx 20rpx 0 20rpx; vertical-align: middle;} */
+
+.searchIcon{float:left;width:29rpx;height:28rpx;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAcCAYAAACdz7SqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiN2MyYWY5MS1mNzY4LWVjNDQtOGJlNC1iZmU0YTNkOTMxY2IiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDY1MUIzQTgwMEQ1MTFFODg2NENCNkJFRjhCQUE0NDkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDY1MUIzQTcwMEQ1MTFFODg2NENCNkJFRjhCQUE0NDkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmVlNTZkMGJiLTM2YTEtNWY0Yi1hZTU0LWEyZDlkNGRiMWU5MiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpiN2MyYWY5MS1mNzY4LWVjNDQtOGJlNC1iZmU0YTNkOTMxY2IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7aJUggAAACX0lEQVR42ryWX0hTURzH75XJwgdLZUggs6dqLrKXCmtThqlBZiK99BzMFx/WW0Hzpah8CBps4OajDz0llRD2d8Z8GfiQRrV8kIi9lIhIIrOX9f3J98J2286d884ffDiHu3t+H+/xnPM7ejwe1yziOBgG/aADtPD5OvgK3oDnYMUqUTAY3G0dind6wD3gL/P7UdILJkAKhMFHK3ldiWeHwCRIUrgBYmAItAMnaAQePovxHT/HTDJHxdJm8AGMgh0wDtxgDMyCn+Av+AMyfDbGd8Y5ZpQ5miuRNoBXoAv8AOc5vVuadWzx3XMc28VcDVbSCEVZTtWytvf4zLFZ5oqopLJoboIcuM5B1UaWOXLM2VNOeh/o4AlIa/uPNL9SZ+7/pJ3AxxX4SLMvHjKnj44i6Qj7L8CmjVLJ9ZT9EbPU2PwvNftjjm23WXqS/cUaSD+xPWGWGmfprxpIjZwt5fapUzugqGO1MA5wu6O1oCIVSTPsn6qB9Azb72Zpiv2rNZBeZpsyS2fYlzJ12Eah5LrB/rPCH6SIL4EFnhy3wR2bpJKribnFoSUSiaLVexfkQYjlyY4IMWe43IEvV4wpVnyZirZ9Ch8z1zSYV9XTW6wObfzHn65SKJXlEvtngUsl3QZXKD7GVirFkT1KZUr7uBU9vDe5VHck2cQBEOcJJYthFUTBIO9C9cTNZ9ES4t8s3l+A1yzWFfdeGfQAXKhwSkuFi0Iv/wD5oDXVvVcW10VWoWtggNNVeNn+Bl4rcqxRlCz44oCjgq/IkIkqF5ZZ/E7P5/O2HUHG5ldM9Xvw9p8AAwCcoYPN7E1+KwAAAABJRU5ErkJggg==) no-repeat;background-size:29rpx 28rpx;margin:18rpx 20rpx 0 20rpx; vertical-align: middle;}
+
+.inputWord{width:550rpx;height:65rpx;font-size:30rpx;color:#333;line-height:65rpx;display:inline-block;}
 .inputWord value{color:#f00;}
 .searchCox a{color:#ccc;text-decoration:none;display:inline-block;}
-.cancelbtn{width:13%;font-size:30rpx;color:#333;line-height:65rpx;text-align:right;}
-.cancelbtn a{color:#333;text-decoration:none; }
+.cancelbtn{color:#333;position:absolute;top:11rpx;right: 20rpx; }
 .searchClose{position:absolute;right:20rpx;top:18rpx;width:30rpx;height:30rpx;line-height:30rpx;background:#999;border-radius:50%;color:#fff;font-size:30rpx;text-align:center;}
 
 /* 产品列表 */

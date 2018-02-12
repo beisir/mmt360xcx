@@ -1,89 +1,90 @@
-<!--shopcart.wxml-->
-
-<!-- par1 左滑删除 -->
-<view class="container" style="display:none;">
-  <view class="operation">编辑</view>
+<wxs src="../../utils/filter.wxs" module="tools" />
+ <view class="container" hidden="{{!shopCarList.length}}">
+  <view class="operation" bindtap="setComplete" hidden="{{complete}}">编辑</view>
+  <view class="operation" bindtap="editComplete" hidden="{{!complete}}">完成</view>
   <view class="orderBox">
-    <view class="orderCon">
-      <view class="seleCur"><label class='seleInput'></label></view>
-      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-      <view class='orderRtxt'>
-        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-        <text class="proColour">颜色：S</text>
-        <view class="orderPrice">
-            ￥<text class='price'>168.</text>00
-        </view>
-        <view class="allNom">X1</view>
-      </view>
-    </view>
 
-    <view class="orderCon delpad">
-      <view class="choice"><label class='choiceInput'></label></view>
-      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+  
+    <view class="orderCon" wx:for="{{shopCarList}}" wx:key="{{index}}"
+          bindtouchstart="startCar"
+          bindtouchend="endCar"
+          bindtouchmove='deleteCar'
+          bindtap="goDetail"
+          data-index="{{index}}"
+          data-bcid="{{item.bcid}}"
+          style="transform:translateX(-{{item.txtStyle}})">
+      <view class="choice" data-index="{{index}}" catchtap="toggerItem" >
+        <label class="choiceInput {{item.flag ? 'seleInput':''}}"></label>
+      </view>
+       <view class='orderImgCon'><image class='orderImg' src='{{item.bcPic}}' data-index="{{index}}"></image></view> 
+      <!-- <view class='orderImgCon'><image class='orderImg' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822'></image></view>  -->
       <view class='orderRtxt'>
-        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-        <text class="proColour">颜色：S</text>
+        <text class="orderTitle">{{item.title}}</text>
+         <text class="proColour">颜色：S</text> 
         <view class="orderPrice">
-            ￥<text class='price'>168.</text>00
+            ￥<text class='price'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
         </view>
-        <view class="amountBox">
-          <view class="amountDown"></view>
+        <view class="amountBox" hidden="{{!complete}}">
+           <view class="amountDown" data-index="{{index}}" data-status="add" catchtap="calculation"></view> 
           <label class='number'>
-            <input class='numInput' type="number" value='5'></input>
+            <input class='numInput' disabled="true" type="number" value='{{item.count}}'></input> 
           </label>
-          <view class="amountUp"></view>
+          <view class="amountUp" data-index="{{index}}" data-status="reduce" catchtap="calculation"></view>
         </view>
+        <view class="allNom" hidden="{{complete}}">X{{item.count}}</view>
       </view>
-      <view class="delregion">删除</view>
+      <view class="delregion" data-index="{{index}}" catchtap="removeItem">删除</view>
     </view>
-
-    <view class="orderCon">
-      <view class="choice"><label class='choiceInput'></label></view>
-      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-      <view class='orderRtxt'>
-        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-        <text class="proColour">颜色：S</text>
-        <view class="orderPrice">
-            ￥<text class='price'>168.</text>00
-        </view>
-        <view class="allNom">X1</view>
-      </view>
-    </view>
-    
-    <view class="orderCon">
-      <view class="choice"><label class='choiceInput'></label></view>
-      <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-      <view class='orderRtxt'>
-        <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-        <text class="proColour">颜色：S</text>
-        <view class="orderPrice">
-            ￥<text class='price'>168.</text>00
-        </view>
-        <view class="allNom">X1</view>
-      </view>
-    </view>
-
   </view>
+
+
 
   <view class="allOrder">
-    <view class="choice_2"><label class='choice_2_input'></label>全选</view>
-    <view class="total">
+    <view class="choice_2" bindtap="selectAll">
+      <label class="choice_2_input {{all ? 'seleCur_2_input':''}}"></label>全选</view>
+    <view class="total" hidden="{{complete}}">
       合计：
         <view class='allprice_1'>
-          ￥<text class='allprice'>168.</text>00
+          ￥<text class='allprice'>{{tools.priceFoalt(priceSum,0)}}.</text>{{tools.priceFoalt(priceSum,1)}}
         </view>
     </view>
-    <view class="buyBtn"><a href="#">立即购买</a></view>
+    <view hidden="{{complete}}">
+      <view hidden="{{priceSum}}" class="buyBtn"><a>结算</a></view> 
+      <view hidden="{{!priceSum}}" class="buyBtn buyBtnClick" bindtap="submitOrder"><a>结算</a></view>
+    </view>
+    <view class="buyBtn buyBtnClick" hidden="{{!complete}}" bindtap="removeAll">删除</view>
   </view>
 
+</view> 
+
+
+ <!-- <view class="container" hidden="{{shopCarList.length}}">
+  <view class="noOrder">您还未添加商品～</view>
+</view> -->
+
+<view class="container" bindtap="onLoad" wx:if="{{!shopCarList.length}}">
+  <view class="noOrder">您还未添加商品～</view>
 </view>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- par2 编辑商品 -->
-<view class="container" style="display:none;">
+ <!-- <view class="container" style="display:blcok;">
   <view class="operation">完成</view>
   <view class="orderBox">
     <view class="orderCon">
-      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class="choice"><label class='seleInput'></label></view>
       <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
       <view class='orderRtxt'>
         <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
@@ -161,14 +162,14 @@
   </view>
 
   <view class="allOrder">
-    <view class="seleCur_2"><label class='seleCur_2_input'></label>全选</view>
+    <view class="choice_2"><label class='seleCur_2_input'></label>全选</view>
     <view class="buyBtn buyBtnClick">删除</view>
   </view>
 
-</view>
+</view>  -->
 
 <!-- par3 商品列表 -->
-<view class="container" style='display:none;'>
+ <!-- <view class="container" style='display:none;'>
   <view class="operation">编辑</view>
   <view class="orderBox">
     <view class="orderCon">
@@ -236,14 +237,14 @@
     <view class="buyBtn"><a href="#">立即购买</a></view>
   </view>
 
-</view>
+</view>  -->
 
 <!-- par4 购买商品 -->
-<view class="container" >
+<!-- <view class="container" >
   <view class="operation">编辑</view>
   <view class="orderBox">
     <view class="orderCon">
-      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class="choice"><label class='seleInput'></label></view>
       <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
       <view class='orderRtxt'>
         <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
@@ -256,7 +257,7 @@
     </view>
 
     <view class="orderCon">
-      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class="choice"><label class='seleInput'></label></view>
       <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
       <view class='orderRtxt'>
         <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
@@ -269,7 +270,7 @@
     </view>
 
     <view class="orderCon">
-      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class="choice"><label class='seleInput'></label></view>
       <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
       <view class='orderRtxt'>
         <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
@@ -282,7 +283,7 @@
     </view>
     
     <view class="orderCon">
-      <view class="seleCur"><label class='seleInput'></label></view>
+      <view class="choice"><label class='seleInput'></label></view>
       <view class='orderImgCon'><image class='orderImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
       <view class='orderRtxt'>
         <text class="orderTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
@@ -297,7 +298,7 @@
   </view>
 
   <view class="allOrder">
-    <view class="seleCur_2"><label class='seleCur_2_input'></label>全选</view>
+    <view class="choice_2"><label class='seleCur_2_input'></label>全选</view>
     <view class="total_2">
       <view class="priceCon_2">
         合计：
@@ -310,9 +311,6 @@
     <view class="buyBtn buyBtnClick"><a href="#">立即购买</a></view>
   </view>
 
-</view>
+</view> -->
 
 <!-- part5 空 购物车 -->
- <view class="container" style="display:none;">
-  <view class="noOrder">您还未添加商品～</view>
-</view>

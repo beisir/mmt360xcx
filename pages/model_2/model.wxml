@@ -1,8 +1,0 @@
-<!--pages/model_2/model.wxml-->
-<view class="container">
-  <view class="modelCon">
-    <view class="modelImg"><image src='https://style.org.hc360.com/images/microMall/program/modex_b.jpg'></image></view>
-    <view class="modelBtn1">启用该模板</view>
-    <view class="modelBtn2">正在使用</view>
-  </view>
-</view>

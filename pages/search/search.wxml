@@ -1,91 +1,37 @@
 <!--search.wxml-->
+<wxs src="../../utils/filter.wxs" module="tools" />
 <view class="container">
   <view class="searchBox">
       <view class="searchCon">
         <icon class='searchIcon'></icon>
-        <view class='inputWord'>请输入商品关健字</view>        
+        <input class='inputWord' type="text" maxlength="50" placeholder='请输入商品关健字' value='{{keyword}}' confirm-type="搜索" bindconfirm="sendKeyWord" bindinput="inputTxt" />
+        <icon class="cancelbtn" type="clear" size="20" color="{{item}}" wx:if="{{isClear}}" bindtap="clearTxt"/>
       </view>
-      <view class="cancelbtn">取消</view>
+      <!-- <view class="cancelbtn">取消</view> -->
     </view>
 
     <view class="proBox">
-      <view class='proCon'>
-        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>  
-        <view class="proTxt">
-          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-          <view class="priceCon">
-            ￥<text class='price'>168.</text>00
-          </view>
-        </view>
-      </view>
-      <view class='proCon'>
-        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-        <view class="proTxt">
-          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-          <view class="priceCon">
-            ￥<text class='price'>168.</text>00
-          </view>
-        </view>
-      </view>
-      <view class='proCon'>
-        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-        <view class="proTxt">
-          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-          <view class="priceCon">
-            ￥<text class='price'>168.</text>00
-          </view>
-        </view>
-      </view>
-      <view class='proCon'>
-        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-        <view class="proTxt">
-          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-          <view class="priceCon">
-            ￥<text class='price'>168.</text>00
-          </view>
-        </view>
-      </view>
-      <view class='proCon'>
-        <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
-        <view class="proTxt">
-          <text class="til">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-          <view class="priceCon">
-            ￥<text class='price'>168.</text>00
-          </view>
-        </view>
-      </view>
+      <block wx:for="{{searchList}}" wx:key="{{index}}">
+        <view class='proCon' data-id="{{item.bcid}}" bindtap="searchDetail">
+          <view class='proImgCon'>
+             <image class='proImg' src='{{item.bcPicPath}}'></image> 
+             <!-- <image class='proImg' src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822"></image>  -->
+          </view>   
+          <view class="proTxt">
+            <text class="til">{{item.title}}</text> 
+            <view class="priceCon">
+              ￥<text class='price'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
+            </view> 
+           </view> 
+         </view>  
+      </block>
     </view>
-    
-    <view class="more">
+    <view class='noSearchCon' wx:if="{{showBox === 'none'}}">没有找到相关的商品～</view>  
+    <view class='noSearchCon' wx:if="{{showBox === 'key'}}">请输入关键字搜索</view>  
+    <view class='noSearchCon' wx:if="{{showBox === 'click'}}">点击搜索开始</view>
+    <view class="more" wx:if="{{showBox === 'more'}}">
       <view class='lineBot'>
         <text class='textBot'>没有更多啦</text>
       </view>
     </view>
-
-</view>
-
-<!-- 搜索无结果 -->
-<view class="container" style='display:none;'>
-  <view class="searchBox">
-     <view class="searchCon">
-      <icon class='searchIcon'></icon>
-      <input class='inputWord' value="苹果"></input>
-      <view class='searchClose'>×</view>
-    </view>
-    <view class="cancelbtn">取消</view>
-  </view>
-  <view class='noSearchCon'>没有找到相关的商品～</view>
-</view>
-
-<!-- 搜索-输入 -->
-<view class="container" style='display:none;'>
-  <view class="searchBox">
-     <view class="searchCon">
-      <icon class='searchIcon'></icon>
-      <input class='inputWord' value="苹果"></input>
-      <view class='searchClose'>×</view>
-    </view>
-    <view class="cancelbtn">取消</view>
-  </view>
-  <view class='noSearchCon'>点击搜索开始</view>
 </view>

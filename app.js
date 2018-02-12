@@ -1,39 +1,92 @@
 //app.js
+const { AuthorIzation, ajax, userInfoFn ,path } = require('./utils/util.js');
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+    let that = this;
+    this.getCompanyInfo();
+    that.mmtLogin().then(res => {
+      wx.setStorageSync('openId', res);
+      that.globalData.openId = res;
+      wx.showToast({
+        title: '登陆成功',
+        icon: 'none'
+      });
+      AuthorIzation().then(function (options){
+        wx.showToast({
+          title: '授权成功',
+          icon: 'none'
+        });
+      }).catch(res => {
+        wx.showToast({
+          title: '授权失败',
+          icon: 'none'
+        });
+      });
+    });
+  },
+  mmtLogin: function (){
+    let panyData = this.globalData.panyData;
+    return new Promise((resolve, reject)=>{
+      let openid = wx.getStorageSync('openId');
+      wx.login({
+        success(res) {
+          ajax({
+            url: path.app.login,
+            data: {
+              jsCode: res.code,
+              appid: panyData.appid
             }
+          }).then(result => {
+            if (result && result.openid){
+              if (openid) {
+                if (result.session_key === openid.session_key) {
+                  resolve(result);
+                } else {
+                  resolve(result);
+                  userInfoFn(function (options) {
+                  });
+                }
+              } else {
+                resolve(result);
+              }
+            } else {
+              wx.showToast({
+                title: '登陆失败',
+                icon: 'none'
+              }); 
+              reject({
+                errMsg: '登录失败'
+              })
+            } 
+          }).catch(err => {
+            reject({
+              errMsg: '登录失败'
+            })
           })
         }
-      }
-    })
+      });
+    });
+  },
+  getCompanyInfo: function () {
+    let that = this;
+    let panyData = this.globalData.panyData;
+    ajax({
+      url: path.app.getAppConfigInfo,
+      data: { imid: panyData.imid }
+    }).then(res => {
+      this.globalData.mchid = res.appConfig.mchid;
+      this.globalData.mmtInfo = res.appConfig;
+    });
+  },
+  userInfoReadyCallback (callback){
+    callback(this.globalData.panyData, this.globalData.mmtInfo, this.globalData.openId);
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    panyData: wx.getExtConfigSync(),
+    mmtInfo: wx.getStorageSync('mmtInfo'),
+    companyInfo: {},
+    mchid: {},
+    openId: {}
   }
 })

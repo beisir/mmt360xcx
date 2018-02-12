@@ -1,37 +1,76 @@
-<!--pages/confirmorder/confirmorder.wxml-->
+<wxs src="../../utils/filter.wxs" module="tools" />
 <view class="container">
-  <view class='addressBox'>
-    <text>您还没有收货地址，请新增地址</text>
-  </view>
+  <navigator class='addressBox' url="../address/address" hidden="{{!status}}">
+    <view class='consignee'>收货人：{{address.userName}}</view>
+    <view class='addressCon'>收货地址：{{address.address}}</view>
+  </navigator >
+  <navigator class='addressBox' url="../address/address" hidden="{{status}}">
+    <view class='noaddress'>您还没有收货地址，请新增地址</view>
+  </navigator>
+
+
   <view class='proBox'>
-    <view class='proCon'>
-      <view class='proImgCon'><image class='proImg' src='https://style.org.hc360.com/images/microMall/program/aimg1.jpg'></image></view>
+    <!-- <view class='proCon' wx:for="{{shopCarList}}" wx:key="{{index}}">
+      <view class='proImgCon'><image class='proImg' src="{{picUrls}}"></image></view> 
       <view class='proRtxt'>
-        <text class="proTitle">韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装韩版宽松套头卫衣连帽加绒长袖女刺绣字母春装</text>
-        <text class="proColour">颜色：S</text>
+        <text class="proTitle">{{shopCarList.title}}</text>
+        <text class="proColour"> </text> 
         <view class="prorPrice">
-            ￥<text class='price'>168.</text>00
+            ￥<text class='price'>{{tools.priceFoalt(shopCarList.price,0)}}.</text>{{tools.priceFoalt(shopCarList.price,1)}}
         </view>
         <view class="amountBox">
-          <view class="amountDown amountReduce"></view>
+          <view class="amountDown {{shopCarList.count <= 1?'amountReduce':''}}" data-status="add" bindtap="calculation"></view>
           <label class='number'>
-            <input class='numInput' type="number" value='0'></input>
+            <input class='numInput' type="number" disabled='true' value='{{shopCarList.count}}'></input>
           </label>
-          <view class="amountUp"></view>
+          <view class="amountUp {{shopCarList.count >= 20?'amountReduce':''}}" data-status="reduce" bindtap="calculation"></view>
         </view>
       </view>
-    </view>
+    </view> -->
+    <block wx:for="{{shopCarList}}" wx:key="{{index}}">
+      <view class='proCon'> 
+        <view class='proImgCon'><image class='proImg' src="{{item.bcPic}}"></image></view>
+        <!-- <view class='proImgCon'><image class='proImg' src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822"></image></view> -->
+        <view class='proRtxt'>
+          <text class="proTitle">{{item.title}}</text>
+          <text class="proColour"> </text> 
+          <view class="prorPrice">
+              ￥<text class='price'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
+          </view>
+          <view class="amountBox" wx:if="{{!source}}">
+            <view class="amountDown {{item.count <= 1?'amountReduce':''}}" data-status="add" bindtap="calculation"></view>
+            <label class='number'>
+              <input class='numInput' type="number" disabled='true' value='{{item.count}}'></input>
+            </label>
+            <view class="amountUp {{item.count >= 20?'amountReduce':''}}" data-status="reduce" bindtap="calculation"></view>
+          </view>
+           <view class="allNom" wx:else>X{{item.count}}</view> 
+        </view>
+      </view>
+    </block>
   </view>
 
   <view class='total'>
-    <view class='proNom'>共1件商品</view>
+    <view class='proNom'>共{{shopCarList.length}}件商品</view>
     <view class="priceBox">
       合计：
       <view class='priceCon'>
-        ￥<text class='price'>168.</text>00
+        ￥<text class='price'>{{tools.priceFoalt(order.totalAmount,0)}}.</text>{{tools.priceFoalt(order.totalAmount,1)}}
       </view>
-      （含运费<text class="freight">￥0.00</text>）
+      （含运费<text class="freight">￥{{tools.priceFoalt(order.totalAmount,0)}}.{{tools.priceFoalt(order.totalAmount,1)}}</text>）
     </view>    
   </view>
 
+  <view class='totalPriceBox'>
+    <view class="botTotal">
+      合计金额：
+        <view class='allprice'>
+          ￥<text class='price'>{{tools.priceFoalt(order.totalAmount,0)}}.</text>{{tools.priceFoalt(order.totalAmount,1)}}
+        </view>
+    </view>
+    <view class='conOlder' bindtap="submitOrder">提交订单</view>
+  </view>
+
+
 </view>
+

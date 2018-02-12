@@ -1,0 +1,29 @@
+<!--pages/proclass/proclass.wxml-->
+ <view class="container">
+  <view class='allClass'>全部商品<view class="leftAroow"></view></view>
+  
+  <view class='otherClass'>
+    <block wx:for="{{lstSeriesVO}}" wx:key="{{index}}">
+      <view class="txtLink {{item.active?'linkcur':''}}" data-seriesName="{{item.seriesName}}" data-seriesid="{{item.seriesid}}" data-index="{{index}}" bindtap="selectActiveFn">
+        {{item.seriesName}}
+        <text class='proMore' wx:if="{{item.children.length!==0}}">查看全部</text>
+        <view class="leftAroow" wx:else></view> 
+      </view>
+      <view class='proWord' wx:if="{{item.children.length}}">
+        <block wx:for="{{item.children}}" wx:for-item="childItem" wx:for-index="childIndex" wx:key="{{childIndex}}">
+          <text class="wordList {{childItem.active ? 'wordcur': ''}}" data-seriesName="{{childItem.seriesName}}" data-seriesid="{{childItem.seriesid}}" data-parIndex="{{index}}" data-index="{{childIndex}}" catchtap="childActiveFn">{{childItem.seriesName}}</text>
+        </block> 
+      </view>
+    </block>
+  </view>
+
+
+
+  <view class="botBox">
+    <view class='lineBot'>
+      <text class='textBot'>慧聪微商城</text>
+    </view>
+    <view class='botTsg'>打造指尖上的移动电商</view>
+  </view>
+
+</view> 

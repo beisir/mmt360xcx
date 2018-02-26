@@ -1,56 +1,45 @@
-const { AuthorIzation } = require('../../utils/util.js');
+const app = getApp();
 Page({
-
   /**
-   * 页面的初始数据
+   * [data 页面初始默认值]
+   * [-------------------------------------------------]
    */
   data: {
     nickName: '',
-    avatarUrl: '',
-    manageConfig: [{
-      text: '购物车',
-      className: 'shopCartCon'
-    }, {
-      text: '优惠券',
-      className: 'shopCartCon'
-    }, {
-      text: '联系客服',
-      className: 'shopCartCon'
-    }, {
-      text: '购物车',
-      className: 'shopCartCon'
-    }, {
-      text: '购物车',
-      className: 'shopCartCon'
-    }]
+    avatarUrl: ''
   },
-
   /**
-   * 生命周期函数--监听页面加载
+   * [onLoad() 获取登陆授权]
+   * [-------------------------------------------------]
    */
   onLoad: function (options) {
     let that = this;
-    AuthorIzation().then( res => {
-      let name = '',
-          path = ''
-      if (res.errMsg.includes('getStorage:ok')){
-        name = res.data.userInfo.nickName;
-        path = res.data.userInfo.avatarUrl;
-      } else if (res.errMsg.includes('getUserInfo:ok')){
-        name = res.userInfo.nickName;
-        path = res.userInfo.avatarUrl;
-      };
+    app.AppLogin().then(res => {
+      // 设置头像 and 微信名称 
       that.setData({
-        nickName: name,
-        avatarUrl: path
-      }) 
-    })
-  },
-  calling (){
-    wx.makePhoneCall({
-      phoneNumber: '4006360888',
+        nickName: res.info.nickName,
+        avatarUrl: res.info.avatarUrl
+      });
+    }).catch(err => {
+      wx.showToast({
+        title: err.errMsg,
+        icon: 'none'
+      });
     });
   },
+  /**
+   * [calling() 客服电话]
+   * [-------------------------------------------------]
+   */
+  calling (){
+    wx.makePhoneCall({
+      phoneNumber: '400-6360-888',
+    });
+  },
+  /**
+   * [authorization() 点击头像区域重新授权]
+   * [-------------------------------------------------]
+   */
   authorization (){
     this.onLoad();  
   }

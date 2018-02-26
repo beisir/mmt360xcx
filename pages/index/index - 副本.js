@@ -22,21 +22,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onShow: function (options) {
+  onLoad: function (options) {
     let that = this;
     /**
      * [app.userInfoReadyCallbac 为了防止index比app先加载，在app的回调]
      * [extJSON:配置文件imid,companyInfo:公司头像和title]
      */ 
     app.userInfoReadyCallback((extJSON, companyInfo) => {
-      let toggerIndex = that.data.toggerIndex;
       that.setData({
         companyInfo: companyInfo || app.globalData.mmtInfo, // 商家信息
-        extJSON: extJSON,     // 商家imid  appid
-        shopList: [],
-        newDetai: []
+        extJSON: extJSON      // 商家imid  appid
       });
-      that.getShopList(toggerIndex);
+      that.getShopList(0);
       wx.setNavigationBarTitle({
         title: companyInfo.nickname || '首页'
       });
@@ -54,44 +51,49 @@ Page({
       path.index.list + `?page=${page}`
     ];
     let url = resurl ? ajaxurl[1] : ajaxurl[0];
-    if (resurl === 0){
+    if (resurl === 0 && this.data.indexList.length){
+      this.setData({
+        shopList: this.data.indexList,
+        toggerIndex: 0
+      });
+    } else if (resurl === 1 && this.data.newDetai.length && page===1){
+      this.setData({
+        shopList: this.data.newDetai
+      }); 
+    } else {
       that.setData({
-        shopList: [],
-        newDetai: []
+        loading: true
+      });
+      ajax({
+        url: url,
+      }).then(function (options) {
+        if (resurl === 0){
+          that.setData({
+            indexList: options,
+            shopList: options
+          }); 
+        } else {
+          let newDetai = that.data.newDetai;
+          if (options.lstResult.length <= 0){
+            that.setData({
+              loading: false
+            })
+            wx.showToast({
+              title: '没有更多数据',
+              icon: 'none',
+              mask: true
+            });
+            return false;
+          };
+          let newArr = newDetai.concat(options.lstResult)
+          that.setData({
+            newDetai: newArr,
+            shopList: newArr,
+            page: options.page
+          });
+        }
       });
     }
-    that.setData({
-      loading: true
-    });
-    ajax({
-      url: url,
-    }).then(function (options) {
-      if (resurl === 0){
-        that.setData({
-          shopList: options
-        });
-      } else {
-        if (options.lstResult.length <= 0){
-          that.setData({
-            loading: false
-          });
-          wx.showToast({
-            title: '没有更多数据',
-            icon: 'none',
-            mask: true
-          });
-          return false;
-        };
-        let newDetai = that.data.newDetai;
-        let newArr = newDetai.concat(options.lstResult)
-        
-        that.setData({
-          newDetai: newArr,
-          shopList: newArr,
-          page: options.page
-        });
-      }
-    });
   },
   /**
    * [onReachBottom 微信内置方法 滑动到底部触发]
@@ -102,7 +104,10 @@ Page({
     if (toggerIndex === 1){
       page += 1;
       this.getShopList(1, page);
-    };
+      this.setData({
+        page: page
+      });
+    }
   },
   /**
    * [toggerClass 切换tab选项同时更新数据，以及动画效果]

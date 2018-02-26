@@ -3,9 +3,8 @@
   <view class='orderListBox'>
     <view class='wxOrderTit'>
       <block wx:for="{{orderTabBar}}" wx:key="{{index}}">
-         <view class="title {{activeIndex === index ? 'orderCur':''}}" id="title{{index}}" data-index="{{index}}" bindtap="toggerFn">{{item.text}}</view>
-      </block>
-      <view class="cur" style="width:{{}}px;transform: translateX({{lateX}}px)"></view>      
+         <view class="title {{activeIndex == index ? 'orderCur':''}}" id="title{{index}}" data-index="{{index}}" bindtap="toggerFn">{{item.text}}</view>
+      </block>     
     </view>
 
     <view class='orderContent'>
@@ -21,7 +20,8 @@
       </oder-list> -->
     <view wx:else>
       <block wx:for="{{orderlist}}" wx:key="{{index}}">
-        <view class='orderListCon' data-orderCode="{{item.order.orderCode}}" bindtap="goOderDetail">
+        <view class='orderListCon'>
+          <view data-orderCode="{{item.order.orderCode}}" bindtap="goOderDetail">
           <block wx:for="{{item.prodList}}" wx:for-item="orderItem" wx:for-index="orderIndex" wx:key="{{orderIndex}}">
             <view class='orderPro'>
               <view class='orderImgCon'><image class='orderImg' src='{{orderItem.bcPic}}'></image></view>
@@ -34,6 +34,7 @@
               </view>
             </view>
           </block>
+          </view>
           <view class='orderBot'>
             <text class='orderState' wx:if="{{item.order.orderStatus === '1'}}">待发货</text>
             <text class='orderState' wx:elif="{{item.order.orderStatus === '2'}}">待收货</text>
@@ -42,9 +43,17 @@
               <text class='allpro'>共{{item.prodList.length}}件商品</text>
               <text class='allPrice'>合计：<text>¥{{item.order.orderTotalAmout}}</text></text>
             </view>
-            <view class='logisticsBtn' wx:if="{{item.order.orderStatus === '2'}}">
+            <!-- <view class='logisticsBtn' wx:if="{{item.order.orderStatus === '2'}}">
               <text class='confirmBtn' catchtap="confirmBtn" data-ordercode="{{item.order.orderCode}}">确认收货</text>
-            </view>
+            </view> -->
+            <form 
+              class='logisticsBtn' 
+              wx:if="{{item.order.orderStatus === '2'}}" 
+              catchsubmit="formSubmit" 
+              report-submit="true"
+              data-ordercode="{{item.order.orderCode}}">
+              <button class='confirmBtn' data-ordercode="{{item.order.orderCode}}" formType="submit">确认收货</button>
+            </form>
           </view>
         </view>
       </block>

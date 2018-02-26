@@ -3,8 +3,6 @@
   <view class="operation" bindtap="setComplete" hidden="{{complete}}">编辑</view>
   <view class="operation" bindtap="editComplete" hidden="{{!complete}}">完成</view>
   <view class="orderBox">
-
-  
     <view class="orderCon" wx:for="{{shopCarList}}" wx:key="{{index}}"
           bindtouchstart="startCar"
           bindtouchend="endCar"
@@ -16,16 +14,15 @@
       <view class="choice" data-index="{{index}}" catchtap="toggerItem" >
         <label class="choiceInput {{item.flag ? 'seleInput':''}}"></label>
       </view>
-       <view class='orderImgCon'><image class='orderImg' src='{{item.bcPic}}' data-index="{{index}}"></image></view> 
-      <!-- <view class='orderImgCon'><image class='orderImg' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822'></image></view>  -->
+      <view class='orderImgCon'><image class='orderImg' src='{{item.bcPic}}' data-index="{{index}}"></image></view> 
       <view class='orderRtxt'>
         <text class="orderTitle">{{item.title}}</text>
-         <text class="proColour">颜色：S</text> 
+        <text class="proColour">.</text>  
         <view class="orderPrice">
             ￥<text class='price'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
         </view>
         <view class="amountBox" hidden="{{!complete}}">
-           <view class="amountDown" data-index="{{index}}" data-status="add" catchtap="calculation"></view> 
+          <view class="amountDown {{item.count<=1?'amountReduce':''}}" data-index="{{index}}" data-status="add" catchtap="calculation"></view> 
           <label class='number'>
             <input class='numInput' disabled="true" type="number" value='{{item.count}}'></input> 
           </label>
@@ -36,8 +33,6 @@
       <view class="delregion" data-index="{{index}}" catchtap="removeItem">删除</view>
     </view>
   </view>
-
-
 
   <view class="allOrder">
     <view class="choice_2" bindtap="selectAll">

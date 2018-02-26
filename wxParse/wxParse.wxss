@@ -21,7 +21,6 @@ view{
     word-break:break-all;
 }
 .wxParse-inline{
-    display: inline;
     margin: 0;
     padding: 0;
     font-size:14px !important;

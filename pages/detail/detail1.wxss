@@ -13,14 +13,13 @@
   position: absolute; right:20rpx;top:12rpx;width:90rpx;height:100rpx;opacity: 0;
   z-index: 100;
 }
-.detailCon{ overflow: hidden; padding-bottom:120rpx;background: #fff;}
+.detailCon{ overflow: hidden; margin-bottom:120rpx;background: #fff;}
 
 .tabTitCon{height:90rpx; line-height:90rpx;border-bottom: 1rpx solid #ddd;position: relative;}
 .curactive{width:100rpx;background:red;height:4rpx;position: absolute;bottom: -2rpx;transition: transform .3s;}
 .tabTit{width:50%; float: left; font-size: 30rpx; text-align: center;}
-.tabTitAll{width:100%; font-size: 30rpx; text-align: center;}
 .tabCur{height:88rpx; display:inline-block;padding:0 18rpx;color:#ff3b3b;}
-.detailContent{overflow:hidden;width:96%;padding:20rpx 2%;}
+.detailContent{overflow: hidden;width:100%;}
 .dBotImg{float:left;width:100%;max-width:750rpx; height: auto;}
 .detailFixed_1{border-top: 1rpx solid #e4e4e4; position: fixed; bottom: 0; background: #fff; width:100%; height:98rpx;}
 .homeBtn,.serviceBtn,.telBtn{ float: left; width:15%; text-align: center; font-size: 22rpx; color: #333; height:98rpx;

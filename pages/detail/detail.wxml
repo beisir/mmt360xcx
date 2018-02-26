@@ -21,9 +21,7 @@
         {{tools.priceFoalt(businChance.price,0)}}.
         <text class="proPriceText">{{tools.priceFoalt(businChance.price,1)}}</text>  
     </view>
-    <view class="proPrice" wx:else>
-      不支持在线交易
-    </view>    
+    <view class="proPrice" wx:else>面议</view>    
   </view>
   <button class="sharebutton" type="default" open-type="share"></button>   
   <view class="shareBox">分享</view>  
@@ -33,10 +31,10 @@
   <view class="tabTitCon">
     <block wx:for="{{parameter}}" wx:key="{{index}}">
       <view class="tabTit">
-        <text class="toggerCur {{toggerIndex === index ?'tabCur':''}}" data-id="{{index}}" id="parameter{{index}}" bindtap="detailTogger">{{item}}</text>
+        <text class="{{toggerIndex === index ?'tabCur':''}}" data-id="{{index}}" bindtap="detailTogger">{{item}}</text>
       </view>
     </block>
-    <view class="curactive" style="transform:translateX({{lateX}}px);width:{{curWidth}}px"></view> 
+    <!-- <view class="curactive" style="transform:translateX({{lateX}}px);width:{{curWidth}}px"></view>  -->
   </view>
   <!-- <swiper class="swiper-box" >
     <swiper-item> -->
@@ -76,8 +74,10 @@
   <view class="telBtn" bindtap="calling">电话</view>
   <!-- mchid商户号  businChance.price 价格   businChance.istrade是否支持在线交易 detailTop.isundershelf 是否下架 -->
     <view wx:if="{{mchid && detailTop.isundershelf !== true && businChance.price !== 0 && businChance.istrade !== '0' }}">
-      <view class="gwcBtn" hidden="{{detailResult.jiaru}}" bindtap="addShoping">加入购物车</view>  
-      <view class="buyBtn" hidden="{{detailResult.jiaru}}" bindtap="purchase">立即购买</view>  
+      <view wx:if="{{!detailResult.jiaru}}">
+        <view class="gwcBtn" bindtap="addShoping">加入购物车</view>  
+        <view class="buyBtn" bindtap="purchase">立即购买</view>  
+      </view>
     </view>
-    <view class="xjBtn" wx:else>立即询价</view>  
+    <view class="xjBtn" wx:else>立即询价<button open-type="contact" style="opacity:0;width:100%;height:100%;position:absolute;top:0;left:0;"></button></view>  
 </view>

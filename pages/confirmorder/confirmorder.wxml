@@ -1,39 +1,20 @@
 <wxs src="../../utils/filter.wxs" module="tools" />
 <view class="container">
-  <navigator class='addressBox' url="../address/address" hidden="{{!status}}">
+  <navigator class='addressBox' url="../address/address" wx:if="{{status}}">
     <view class='consignee'>收货人：{{address.userName}}</view>
     <view class='addressCon'>收货地址：{{address.address}}</view>
   </navigator >
-  <navigator class='addressBox' url="../address/address" hidden="{{status}}">
-    <view class='noaddress'>您还没有收货地址，请新增地址</view>
+  <navigator class='addressBox' url="../address/address" wx:else>
+    <view class='noaddress'>您还没有设置收货地址，请设置地址</view>
   </navigator>
-
-
   <view class='proBox'>
-    <!-- <view class='proCon' wx:for="{{shopCarList}}" wx:key="{{index}}">
-      <view class='proImgCon'><image class='proImg' src="{{picUrls}}"></image></view> 
-      <view class='proRtxt'>
-        <text class="proTitle">{{shopCarList.title}}</text>
-        <text class="proColour"> </text> 
-        <view class="prorPrice">
-            ￥<text class='price'>{{tools.priceFoalt(shopCarList.price,0)}}.</text>{{tools.priceFoalt(shopCarList.price,1)}}
-        </view>
-        <view class="amountBox">
-          <view class="amountDown {{shopCarList.count <= 1?'amountReduce':''}}" data-status="add" bindtap="calculation"></view>
-          <label class='number'>
-            <input class='numInput' type="number" disabled='true' value='{{shopCarList.count}}'></input>
-          </label>
-          <view class="amountUp {{shopCarList.count >= 20?'amountReduce':''}}" data-status="reduce" bindtap="calculation"></view>
-        </view>
-      </view>
-    </view> -->
     <block wx:for="{{shopCarList}}" wx:key="{{index}}">
       <view class='proCon'> 
         <view class='proImgCon'><image class='proImg' src="{{item.bcPic}}"></image></view>
         <!-- <view class='proImgCon'><image class='proImg' src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822"></image></view> -->
         <view class='proRtxt'>
           <text class="proTitle">{{item.title}}</text>
-          <text class="proColour"> </text> 
+          <text class="proColour">.</text> 
           <view class="prorPrice">
               ￥<text class='price'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
           </view>
@@ -57,7 +38,7 @@
       <view class='priceCon'>
         ￥<text class='price'>{{tools.priceFoalt(order.totalAmount,0)}}.</text>{{tools.priceFoalt(order.totalAmount,1)}}
       </view>
-      （含运费<text class="freight">￥{{tools.priceFoalt(order.totalAmount,0)}}.{{tools.priceFoalt(order.totalAmount,1)}}</text>）
+      （含运费<text class="freight">￥0.00</text>）
     </view>    
   </view>
 
@@ -70,7 +51,5 @@
     </view>
     <view class='conOlder' bindtap="submitOrder">提交订单</view>
   </view>
-
-
 </view>
 

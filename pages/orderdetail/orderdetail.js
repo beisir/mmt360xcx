@@ -1,31 +1,36 @@
 let { ajax, path } = require('../../utils/util.js');
 Page({
-
   /**
-   * 页面的初始数据
+   * [orderdetail: data ]
+   * [-------------------------------------------------]
    */
   data: {
+    // 当前订单信息
     orderDetail: {}
   },
-
   /**
-   * 生命周期函数--监听页面加载
+   * [onLoad(): options 订单orderCode 查询订单详情 ]
+   * [-------------------------------------------------]
    */
-  onLoad: function (options) {  
+  onLoad: function (options) {
     let that = this;
     ajax({
       url: path.orderdetail.getAppOrderDetail,
       data: {
-        orderCode: options.ordercode
+        orderCode: options.orderCode
       }
     }).then( res => {
       if (res.errcode === 0){
+        // console.log(res.data.orderDetail)
         that.setData({
           orderDetail: res.data.orderDetail
         });
       }
-      
-      // console.log(res)
-    })
+    }).catch(err => {
+      wx.showToast({
+        title: '查询失败',
+        icon: 'none'
+      });
+    });
   }
-})
+});

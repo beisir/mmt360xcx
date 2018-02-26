@@ -2,15 +2,8 @@
 .wxOrderTit{display:flex;height:85rpx;border-top:1rpx solid #f8f8f8;background:#fff;padding:0 25rpx;position: relative;}
 .title{width:25%;line-height:85rpx;font-size:26rpx;color:#333;text-align:center;display:inline-block;}
 .title a{color:#333;text-decoration:none;display:block;}
-.orderCur{color: #ff3b3b;}
-.cur{
-  width: 25%;
-  height: 4rpx;
-  background: red;
-  position: absolute;
-  bottom: 0;
-  transition: transform .3s ease-in;
-}
+.orderCur{color: #ff3b3b;border-bottom:4rpx solid #ff3b3b; }
+
 .orderContent{clear:both;margin-top:20rpx;}
 .orderNo{padding:250rpx 0;text-align:center;font-size:30rpx;color:#666;}
 .orderListCon{background:#fff;margin-bottom:20rpx;overflow:hidden;}
@@ -32,6 +25,6 @@
 .wxOrderBot .allpro{margin-right:15rpx;}
 
 .logisticsBtn{border-top:1rpx solid #eaeaea;height:70rpx;padding-top:24rpx;overflow:hidden;}
-.confirmBtn{float:right;width:155rpx;height:46rpx;line-height:46rpx;font-size:24rpx;color:#ff3b3b;border:2rpx solid #ff3b3b;border-radius:30rpx;text-align:center;display:block;}
+.confirmBtn{float:right;line-height:46rpx;font-size:24rpx;color:#ff3b3b;border:2rpx solid #ff3b3b;border-radius:30rpx;text-align:center;display:block;}
 .confirmBtn a{display:block;}
 

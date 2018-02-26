@@ -1,20 +1,19 @@
-
-  
-  <view class="proList">
-    <block wx:for="{{shopList}}" wx:key="{{index}}"> 
-      <view class='proCon' data-bcid="{{item.bcid}}" bindtap="goDetail">
-        <view class='proImgCon'>
-              <image class='proImg' lazy-load="true" data-index="{{index}}" src="{{item.bcPicPath?item.bcPicPath:errImg}}" binderror="errImgEvent" />    
-             <!-- <image class='proImg' lazy-load="true" src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822" />    -->
-        </view> 
-        <text class="protil">{{item.title}}</text>
-        <view class="price" wx:if="{{item.price == 0}}">
-          <text class='allprice'>面议</text>
-        </view>
-        <view class="price" wx:else>
-          ￥<text class='allprice'>{{item.price}}.</text>00
-        </view>
+<wxs src="../../utils/filter.wxs" module="tools" />
+<view class="proList">
+  <block wx:for="{{shopList}}" wx:key="{{index}}"> 
+    <view class='proCon' data-bcid="{{item.bcid}}" bindtap="goDetail">
+      <view class='proImgCon'>
+            <image class='proImg' lazy-load="true" data-index="{{index}}" src="{{item.bcPicPath?item.bcPicPath:errImg}}" binderror="errImgEvent" />    
+            <!-- <image class='proImg' lazy-load="true" src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822" />    -->
+      </view> 
+      <text class="protil">{{item.title}}</text>
+      <view class="price" wx:if="{{item.price == 0}}">
+        <text class='allprice'>面议</text>
       </view>
-    </block>
-  </view>
+      <view class="price" wx:else>
+        ￥<text class='allprice'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
+      </view>
+    </view>
+  </block>
+</view>
   

@@ -5,14 +5,17 @@
       <view class='proCon' data-bcid="{{item.bcid}}" bindtap="goDetail">
         <view class='proImgCon'>
           <!-- <image class='proImg' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822'></image> -->
-           <image class='proImg' src='{{item.bcPicPath}}' data-index="{{index}}"> </image> 
+           <image class='proImg' lazy-load="true" src='{{item.bcPicPath?item.bcPicPath:errImg}}' data-index="{{index}}" binderror="errImgEvent" /> 
         </view>   
         <text class="til">{{item.title}}</text>
-        <view class="price">
-          ￥<text class='allprice'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}.
+        <view class="price" wx:if="{{item.price === 0}}">
+          <text class='allprice'>面议</text>
+        </view>
+        <view class="price" wx:else>
+          ￥<text class='allprice'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
         </view>
       </view>
     </block>
   </view>
-  <view class="more"><view><text>没有更多啦</text></view></view>
+  <view class="more"><view><text>{{isLoad?'加载中...': '没有更多啦'}}</text></view></view>
 </view>

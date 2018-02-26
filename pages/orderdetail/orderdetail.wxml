@@ -1,25 +1,21 @@
 <view class="container">
   <view class="wxAddressBox">
     <view class="addressLeft">
-        <view class="addressUser">{{orderDetail.order.nickname}}<text class="addressTel">{{orderDetail.order.telephone}}</text></view>
+        <view class="addressUser">{{orderDetail.order.rec_name}}<text class="addressTel">{{orderDetail.order.telephone}}</text></view>
         <text class="addressFont">{{orderDetail.order.rec_addr}}</text>
     </view>
   </view>
   <view class="orderContent">
     <view class="orderListCon">
-        <!-- <view class="orderConTit"><text class="orderState">待卖家发货</text></view> 
-        <view class="orderConTit"><text class="orderState">已完成</text></view> 
-        <view class="orderConTit">
-            <text class="orderState">卖家已发货</text>
-            <view class="dshuoBtn">确认收货</view>
-        </view>  -->
         <block wx:for="{{orderDetail.prodList}}" wx:key="{{index}}"> 
           <view class="dOrderCon">
-            <!-- <view class="orderImg"><image class="orderImgCon" src="http://img000.hc360.cn/k3/M00/87/C3/wKhQx1pNhXuEUpI0AAAAAO-Ey-E264.jpg"></image></view>  -->
             <view class="orderImg"><image class="orderImgCon" src="{{item.bcPic}}"></image></view> 
             <view class="orderImgRig">
                 <view class="orderName"><view class="oName">{{item.bcName}}</view></view> 
-                <view class="oListPrice"><text class="oListPrice_1">¥ {{item.bcUnitPrice}}</text><text class="oListNum">X{{item.bcNumber}}</text></view>
+                <view class="oListPrice">
+                  <text class="oListPrice_1">¥ {{item.bcUnitPrice}}</text>
+                  <text class="oListNum">X{{item.bcNumber}}</text>
+                </view>
             </view>
           </view>
         </block>
@@ -32,11 +28,11 @@
         <view class="orderDetailBot2">应付总额：<text class="totalPriceCon">¥ {{orderDetail.order.orderTotalAmout}}</text></view>
         <view class="dOrderConBot">
             <view class="orderDetail2">
-                <view class="totalPrice"><text class="totalPriceFont">订单编号</text><text class="totalPriceNum">13259503447011525211</text></view>
+                <view class="totalPrice"><text class="totalPriceFont">订单编号</text><text class="totalPriceNum">{{orderDetail.order.orderCode}}</text></view>
                 <view class="freightCon"><text class="freightFont">下单时间</text><text class="freightPrice">{{orderDetail.order.orderCreateTime}}</text></view>
             </view>
         </view>
-        <view class="courierBox">
+        <view class="courierBox" wx:if="{{orderDetail.post}}">
             <view class="courierList" wx:if="{{orderDetail.post.post_code}}"><text class="courierLeft">物流单号：</text><text class="courierRig">{{orderDetail.post.post_code}}</text></view>
             <view class="courierList" wx:if="{{orderDetail.post.post_company}}"><text class="courierLeft">物流公司：</text><text class="courierRig">{{orderDetail.post.post_company}}</text></view>
             <view class="courierList" wx:if="{{orderDetail.post.post_remark}}"><text class="courierLeft">备注：</text><text class="courierRig">{{orderDetail.post.post_remark}}</text></view>

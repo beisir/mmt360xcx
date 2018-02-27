@@ -7,8 +7,7 @@
             circular="true"
             autoplay="true">
       <block wx:for="{{picUrls}}" wx:key="{{index}}">
-         <swiper-item><image class="proImgBoxImg"  src="{{item.picUrl300}}"></image></swiper-item> 
-        <!-- <swiper-item><image class="proImgBoxImg" src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image></swiper-item> -->
+         <swiper-item><image class="proImgBoxImg" mode="aspectFit" src="https:{{item.picUrl300}}"></image></swiper-item> 
       </block>
     </swiper>   
   </view>

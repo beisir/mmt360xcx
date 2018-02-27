@@ -102,6 +102,7 @@ line-height:20px;
 .wxParse-img{
     /*background-color: #efefef;*/
     overflow: hidden;
+    width: 730rpx; 
 }
 
 .wxParse-blockquote {

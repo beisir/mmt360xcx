@@ -20,7 +20,7 @@
   },
   "tabBar": {
     "color": "#333",
-    "selectedColor": "#ff3b3b",
+    "selectedColor": "#004db1",
     "borderStyle": "#e4e4e4",
     "backgroundColor": "#fff",
     "font-size": "22rpx",
@@ -28,25 +28,25 @@
       {
         "pagePath": "pages/index/index",
         "iconPath": "image/ficonIndex1.png",
-        "selectedIconPath": "image/ficonIndex2.png",
+        "selectedIconPath": "image/ficonIndex2_3.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/proclass/proclass",
         "iconPath": "image/classIcon1.png",
-        "selectedIconPath": "image/classIcon2.png",
+        "selectedIconPath": "image/classIcon2_3.png",
         "text": "分类"
       },
       {
         "pagePath": "pages/shopcart/shopcart",
         "iconPath": "image/ficonCart1.png",
-        "selectedIconPath": "image/ficonCart2.png",
+        "selectedIconPath": "image/ficonCart2_3.png",
         "text": "购物车"
       },
       {
         "pagePath": "pages/manage/manage",
         "iconPath": "image/ficonMy1.png",
-        "selectedIconPath": "image/ficonMy2.png",
+        "selectedIconPath": "image/ficonMy2_3.png",
         "text": "我的"
       }
     ]

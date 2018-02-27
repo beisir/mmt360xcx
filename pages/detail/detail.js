@@ -104,10 +104,7 @@ Page({
     });
     ajax({
       // 请求参数列表和 价格 图片列表等
-      url: path.detail.supply,
-      data: {
-        bcid: result.bcid
-      }
+      url: path.detail.supply + result.bcid
     }).then(data => {
       that.setData({
         detailTop: data, // 设置详情列表
@@ -244,7 +241,7 @@ Page({
         // 拼接确认订单页面的商品信息列表 [ps: 虽是列表，但是在确认订单页面总是显示一个商品，为了和购物车结算跳转同步]
         let objOptions = {  
           title: detailTop.title,
-          bcPic: (detailTop.picUrls && detailTop.picUrls.picUrl) || '',
+          bcPic: (detailTop.picUrls && detailTop.picUrls[0].picUrl) || '',
           price: totalAmount,
           bcid: that.data.bcid,
           count: 1
@@ -277,6 +274,7 @@ Page({
           url: `../confirmorder/confirmorder?order=${setTlement}`
         });
     }).catch(err => {
+      console.log(err);
       wx.showToast({
         title: '授权购买',
         icon: 'none'
@@ -284,20 +282,23 @@ Page({
     });  
   },
   /**
-   * [purchase() 立即购买按钮点击事件]
+   * [onShareAppMessage() 分享]
    * [-------------------------------------------------]
    */
   onShareAppMessage: function (options) {
-    var that = this;
+    let that = this,
+      title = this.data.detailTop.title,
+      picUrls = this.data.picUrls;
+    let shareImg = 'https:' + picUrls[0].picUrl300 || '';
   // 设置菜单中的转发按钮触发转发事件时的转发内容
-    var shareObj = {
+    let shareObj = {
       // 默认是小程序的名称(可以写slogan等)
-      title: "转发的标题",
+      title: title,
       // 默认是当前页面，必须是以‘/’开头的完整路径
-      path: '',
+      // path: 'pages/index/index',
       /*自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径，支持PNG及JPG，不传入 
       imageUrl 则使用默认截图。显示图片长宽比是 5:4*/
-      imgUrl: 'https://b2b.hc360.com/h5/wj_41.jpg',     
+      imageUrl: shareImg,     
       success: function (res) {
       // 转发成功之后的回调
       // console.log(res);

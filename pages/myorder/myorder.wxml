@@ -46,7 +46,7 @@
             <!-- <view class='logisticsBtn' wx:if="{{item.order.orderStatus === '2'}}">
               <text class='confirmBtn' catchtap="confirmBtn" data-ordercode="{{item.order.orderCode}}">确认收货</text>
             </view> -->
-            <form 
+            <form
               class='logisticsBtn' 
               wx:if="{{item.order.orderStatus === '2'}}" 
               catchsubmit="formSubmit" 

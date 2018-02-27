@@ -143,15 +143,13 @@ App({
    * [-------------------------------------------------]
    */
   getCompanyInfo: function (callback) { 
-    let that = this;
-    let panyData = this.globalData.panyData,
+    let that = this,
       mmtInfo = this.globalData.mmtInfo;
     if (mmtInfo){
       callback(mmtInfo)
     } else {
       ajax({
-        url: path.app.getAppConfigInfo,
-        data: { imid: panyData.imid }
+        url: path.app.getAppConfigInfo
       }).then(res => {
         that.globalData.mchid = res.appConfig.mchid;
         that.globalData.mmtInfo = res.appConfig;

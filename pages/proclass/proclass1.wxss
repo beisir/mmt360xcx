@@ -1,6 +1,6 @@
 /* pages/proclass/proclass.wxss */
 
-.otherClass .allClass{height:90rpx;line-height:90rpx;background:#fff;padding:0 25rpx;font-size:32rpx;color:#333;margin:20rpx 0;position:relative;border-bottom:none;}
+.allClass{height:90rpx;line-height:90rpx;background:#fff;padding:0 25rpx;font-size:32rpx;color:#333;margin:20rpx 0;position:relative;}
 .leftAroow{
   width:25rpx;
    height:35rpx;
@@ -11,7 +11,7 @@
    right:25rpx;
    top:30rpx;
 }
-.otherClass{clear:both;background:#f8f8f8;overflow:hidden;}
+.otherClass{clear:both;background:#fff;overflow:hidden;}
 .txtLink{
   clear:both;
   height:90rpx;
@@ -21,13 +21,16 @@
   padding:0 25rpx;
   border-bottom:1rpx solid #ddd;
   position:relative;
-  border-left: 4rpx solid #fff;background-color:#fff;
+  border-left: 4rpx solid #fff;
 }
-.otherClass .linkcur{border-left:4rpx solid #ff3b3b;color:#ff3b3b;}
+.otherClass .linkcur{
+  border-left-color: #f00;
+}
+
 .protitle{clear:both;height:90rpx;line-height:90rpx;font-size:32rpx;color:#333;padding:0 25rpx;background:#fff;border-left:4rpx solid #fff;}
 .proMore{float:right;font-size:24rpx;color:#999;}
-.proWord{clear:both;background:#fff;padding-bottom:10rpx;overflow:hidden;padding-left:2.5%;}
-.wordList{float:left;width:45%;height:90rpx;line-height:90rpx;font-size:24rpx;color:#333;padding:0 4%;background:#f8f8f8;border-radius:14rpx;margin:0 1% 10rpx 2%;display:block;overflow:hidden;box-sizing: border-box;}
+.proWord{clear:both;background:#fff;margin-bottom:10rpx;overflow:hidden;}
+.wordList{float:left;width:45%;height:90rpx;line-height:90rpx;font-size:24rpx;color:#333;padding:0 4%;background:#f8f8f8;border-radius:20rpx;margin:0 1% 10rpx 3%;display:block;overflow:hidden;box-sizing: border-box;}
 .wordcur{
   border-bottom:red solid 4rpx;
 }

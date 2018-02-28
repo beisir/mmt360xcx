@@ -15,13 +15,8 @@ Page({
    */
   onLoad: function () {
     let that = this;
-    // imid ： 商铺id
-    let imid = app.globalData.panyData.imid;
     ajax({
-      url: path.proclass.shopseries,
-      data: {
-        imid: imid
-      }
+      url: path.proclass.shopseries
     }).then(res => {
       // 如果商铺分类不为空
       if (res && res.lstSeriesVO.length !== 0) {

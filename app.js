@@ -103,8 +103,7 @@ App({
           ajax({
             url: path.app.login,
             data: {
-              jsCode: res.code,
-              appid: panyData.appid
+              jsCode: res.code
             }
           }).then(result => {
             if (result && result.openid){

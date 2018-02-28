@@ -106,6 +106,7 @@ Page({
       // 请求参数列表和 价格 图片列表等
       url: path.detail.supply + result.bcid
     }).then(data => {
+      // console.log(data);
       that.setData({
         detailTop: data, // 设置详情列表
         picUrls: data.picUrls || [], // 设置轮播图片列表
@@ -221,7 +222,7 @@ Page({
           // 2： 在手机原生界面添加联系人 ，默认联系人姓名，手机号
           case 2: wx.addPhoneContact({
             firstName: '',//联系人姓名
-            mobilePhoneNumber: that.data.phoneNum,//联系人手机号
+            mobilePhoneNumber: that.data.phoneNum//联系人手机号
           });break;
           default : return false;
         }

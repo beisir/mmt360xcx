@@ -120,17 +120,16 @@ function AuthorIzation(){
     });
   });
 };
-https://style.org.hc360.com/images/microMall/proGimg.png
-const errImg = 'https://style.org.hc360.com/images/microMall/program/proGimg.png';
 const extJSON = wx.getExtConfigSync();
-console.log(extJSON)
+console.info(extJSON)
 let hostname = 'https://madata.hc360.com/mobileapp';
+// let hostname = 'https://testwx.hc360.com/mobileapp';
 const config = {
   detail: `${hostname}/busin/list/${extJSON.imid}`
 }
 const httpPath = {
   app: {
-    login: `${hostname}/index/login`, // 登陆
+    login: `${hostname}/index/login?appid=${extJSON.appid}`, // 登陆
     getAppConfigInfo: `${hostname}/wx/getAppConfigInfo?imid=${extJSON.imid}` // 获取公司信息以及是否显示价格
   },
   index: {
@@ -143,8 +142,7 @@ const httpPath = {
     orderSendOrRec: `${hostname}/order/orderSendOrRec`
   },
   proclass: {
-    // shopseries: `https://wsdetail.b2b.hc360.com/xcx/shopseries/` // 分类数据接口
-    shopseries: `${hostname}/transfer/shopseries/`
+    shopseries: `${hostname}/transfer/shopseries/?imid=${extJSON.imid}`
   },
   address: {
     address: `${hostname}/address/list/`, // 获取地址列表
@@ -176,5 +174,5 @@ module.exports = {
   userInfoFn: userInfo,
   extJSON: extJSON,
   path: httpPath,
-  errImg: errImg
+  errImg: 'https://style.org.hc360.com/images/microMall/program/proGimg.png'
 }

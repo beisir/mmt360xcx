@@ -10,7 +10,7 @@
   <view class='proBox'>
     <block wx:for="{{shopCarList}}" wx:key="{{index}}">
       <view class='proCon'> 
-        <view class='proImgCon'><image class='proImg' src="https:{{item.bcPic}}"></image></view>
+        <view class='proImgCon'><image class='proImg' src="{{item.bcPic}}"></image></view>
         <view class='proRtxt'>
           <text class="proTitle">{{item.title}}</text>
           <text class="proColour">.</text> 

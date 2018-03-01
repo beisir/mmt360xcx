@@ -3,8 +3,7 @@
   <block wx:for="{{shopList}}" wx:key="{{index}}"> 
     <view class='proCon' data-bcid="{{item.bcid}}" bindtap="goDetail">
       <view class='proImgCon'>
-            <image class='proImg' lazy-load="true" data-index="{{index}}" src="{{item.bcPicPath?item.bcPicPath:errImg}}" binderror="errImgEvent" />    
-            <!-- <image class='proImg' lazy-load="true" src="https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822" />    -->
+            <image class='proImg' lazy-load="true" data-index="{{index}}" src="{{item.bcPicPath?item.bcPicPath:errImg}}" binderror="errImgEvent" />
       </view> 
       <text class="protil">{{item.title}}</text>
       <view class="price" wx:if="{{item.price == 0}}">
@@ -16,4 +15,3 @@
     </view>
   </block>
 </view>
-  

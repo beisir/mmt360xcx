@@ -16,6 +16,6 @@
 .delBtn{background:url(https://style.org.hc360.com/images/microMall/program/aIcon3.png) no-repeat 4rpx -320rpx;background-size:200rpx 500rpx;}
 .newAddress{position:fixed;left:0;bottom:0;width:100%;height:100rpx;background:#f8f8f8;padding-top:20rpx;}
 .addressBtn{width:80%;height:80rpx;line-height:80rpx;font-size:40rpx;color:#fff;background:#ff3b3b;text-align:center;display:block;border-radius:40rpx;margin:0 auto;}
-
+.container .noOrder{position:fixed;height:100%;width:100%;color:#ccc;font-size:30rpx;display:flex;flex-direction:column;align-items:center;/*垂直居中*/justify-content: center;/*水平居中*/}
 
 /* https://style.org.hc360.com/images/microMall/program/aIcon3.png */

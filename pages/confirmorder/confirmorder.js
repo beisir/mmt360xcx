@@ -69,7 +69,7 @@ Page({
     };
     // 应为数据量有些大，发送后台参数为JSON字符串
     setTlement = JSON.stringify(setTlement);  
-    if (address !== null){ // 如果地址不为空  ,则直接发送请求
+    if (address !== '' ){ // 如果地址不为空  ,则直接发送请求
       ajax({      
         url: path.shopcart.saveAppOrder,
         method: 'POST',

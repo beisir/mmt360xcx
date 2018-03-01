@@ -1,6 +1,6 @@
 <!--pages/address/address.wxml： 地址添加选择页面-->
 <view class="container">
-  <view class='addressBox'>
+  <view class='addressBox' wx:if="{{addressList.length}}">
     <block wx:for="{{addressList}}" wx:key="{{index}}">
     <view class='addressCon'>
       <view class='nameTel'>
@@ -19,6 +19,8 @@
     </view>
   </block>    
   </view>
+  <view class="noOrder" wx:else>您还未添加地址～</view>
+
 
   <view class='newAddress'>
     <view class='addressBtn' bindtap="addAddress">添加新地址</view>

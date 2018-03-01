@@ -165,7 +165,7 @@ const httpPath = {
     saveAppOrder: `${hostname}/order/saveAppOrder`  // 发起订单
   },
   confirmorder: {
-    sendTemplateMessage: `${hostname}/appManager/sendTemplateMessage`
+    sendTemplateMessage: `${hostname}/appManager/sendTemplateMessage?appid=${extJSON.appid}`
   }
 }
 module.exports = {

@@ -221,34 +221,41 @@ Page({
         return res;
       };
     });
-    // 发送删除数据
-    ajax({
-      url: path.shopcart.updateAppShop,
-      method: 'POST',
-      data: {
-        // 将删除的数据数组 转为JSONstring 发送
-        shopInfo: JSON.stringify(sendremoveList)
-      }
-    }).then(res => {
-      if (res.errcode === 0) {
-        // 删除成功之后将商品数据 之前有变化的在data中过滤删除
-        let newList = removeList.filter(res => {
-          if (res.status !== '0'){
-            return res;
-          }  
-        });
-        // 将过滤之后的新数据赋值给商品列表参数 刷新列表
-        that.setData({
-          shopCarList: newList
-        },()=>{
-          wx.showToast({
-            title: '删除成功'
+    if (sendremoveList.length){
+      // 发送删除数据
+      ajax({
+        url: path.shopcart.updateAppShop,
+        method: 'POST',
+        data: {
+          // 将删除的数据数组 转为JSONstring 发送
+          shopInfo: JSON.stringify(sendremoveList)
+        }
+      }).then(res => {
+        if (res.errcode === 0) {
+          // 删除成功之后将商品数据 之前有变化的在data中过滤删除
+          let newList = removeList.filter(res => {
+            if (res.status !== '0') {
+              return res;
+            }
           });
-        });
-        // 重新调用列表计算新的总价sum
-        that.calculPrice();
-      }
-    })
+          // 将过滤之后的新数据赋值给商品列表参数 刷新列表
+          that.setData({
+            shopCarList: newList
+          }, () => {
+            wx.showToast({
+              title: '删除成功'
+            });
+          });
+          // 重新调用列表计算新的总价sum
+          that.calculPrice();
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请选择删除商品',
+        icon: 'none'
+      });
+    };
   },
   /**
    * [toggerItem() 切换选中否 radio 操作 事件]

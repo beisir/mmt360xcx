@@ -39,15 +39,9 @@
   </view>
   <!-- <swiper class="swiper-box" >
     <swiper-item> -->
-
-
-
       <view class="detailContent" wx:if="{{!toggerIndex}}"> 
           <template is="wxParse" data="{{wxParseData:aHrefHrefData.nodes}}" />
       </view>
-
-
-
     <!-- </swiper-item>
     <swiper-item> -->
        <view class="detailContent" wx:else> 

@@ -7,6 +7,19 @@
   </view>
   <view class="orderContent">
     <view class="orderListCon">
+    <view class="orderConTit">
+      <text class="orderState" wx:if="{{orderDetail.order.orderStatus === '1'}}">待卖家发货</text>
+      <text class="orderState" wx:elif="{{orderDetail.order.orderStatus === '3'}}">已完成</text>
+      <form 
+          wx:elif="{{orderDetail.order.orderStatus === '2'}}" 
+          catchsubmit="formSubmit" 
+          report-submit="true"
+          data-ordercode="{{item.order.orderCode}}">
+        <text class="orderState">卖家已发货</text>
+        <button class="dshuoBtn" data-ordercode="{{item.order.orderCode}}" formType="submit">确认收货</button>
+      </form>
+        <!-- <view class="dshuoBtn" bindtap="formSubmit">确认收货</view> -->
+    </view> 
         <block wx:for="{{orderDetail.prodList}}" wx:key="{{index}}"> 
           <view class="dOrderCon">
             <view class="orderImg"><image class="orderImgCon" src="{{item.bcPic}}"></image></view> 

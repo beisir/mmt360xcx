@@ -40,10 +40,6 @@ Page({
           };
         });
       } else {
-        wx.showToast({
-          title: '暂无地址',
-          icon: 'none'
-        });
         wx.removeStorageSync('address');
         options = [];
       };

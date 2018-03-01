@@ -34,8 +34,17 @@ Page({
       openid: openid,
       appid: appid
     });
+    // console.log(options.order)
+  },
+  onShow(){
     // 请求某个订单{order=..}数据,设置分页默认为1页
-    this.getMyOder(options.order,1);
+    let order = this.data.activeIndex,
+      that = this;
+    this.setData({
+      orderlist:[]
+    }, res => {
+      that.getMyOder(order, 1);
+    });
   },
   /**
    * [toggerFn() 点击tab进行切换cur 事件，并请求对应的数据 ]
@@ -104,7 +113,7 @@ Page({
   goOderDetail(e) {
     let orderCode = e.currentTarget.dataset.ordercode;
     wx.navigateTo({
-      url: `../orderdetail/orderdetail?orderCode=${orderCode}`,
+      url: `../orderdetail/orderdetail?orderCode=${orderCode}`
     });
   },
   /**

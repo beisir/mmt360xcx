@@ -242,7 +242,7 @@ Page({
         // 拼接确认订单页面的商品信息列表 [ps: 虽是列表，但是在确认订单页面总是显示一个商品，为了和购物车结算跳转同步]
         let objOptions = {  
           title: detailTop.title,
-          bcPic: (detailTop.picUrls && detailTop.picUrls[0].picUrl) || '',
+          bcPic: 'https:' +  (detailTop.picUrls && detailTop.picUrls[0].picUrl) || '',
           price: totalAmount,
           bcid: that.data.bcid,
           count: 1

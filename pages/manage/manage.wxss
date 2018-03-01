@@ -15,7 +15,7 @@
 .moreOrder{ float: right; color: #999; font-size:30rpx; position: relative; display: block;height:90rpx; padding-right: 40rpx; text-align: right; line-height: 90rpx;}
 .moreOrder:after{content:"";height:90rpx;width:40rpx; display: block; background: #ff0000; position: absolute;background: url(https://style.org.hc360.com/images/microMall/program/detailIco2.png) -260rpx -532rpx no-repeat; background-size: 300rpx 600rpx;top:0;right:0;}
 .orderState{height:180rpx; background:#fff; margin-bottom: 20rpx;}
-.fahuo,.shouhuo,.complete{float: left;width:33.333%; text-align:center; font-size: 24rpx; color: #666;}
+.fahuo,.shouhuo,.complete{float: left;width:33.333%; height:100%;text-align:center; font-size: 24rpx; color: #666;}
 .fahuo:before,.shouhuo:before,.complete:before{content:"";width: 52rpx; height:52rpx; margin:45rpx auto 15rpx; background: #ff0000; display: block;background: url(https://style.org.hc360.com/images/microMall/program/detailIco2.png) no-repeat;}
 .fahuo:before{ background-position:-190rpx 10rpx;background-size: 300rpx 600rpx;}
 .shouhuo:before{ background-position:-113rpx 10rpx;background-size: 300rpx 600rpx;}

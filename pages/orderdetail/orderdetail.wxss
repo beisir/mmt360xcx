@@ -34,7 +34,7 @@
 .orderDetailBot2{text-align:right;line-height:90rpx;font-size:28rpx;color:#333;background:#f8f8f8;padding-right:20rpx;height:90rpx;}
 .totalPriceCon{padding-left:10rpx;color:#ff3b3b;}
 .orderState{ float:left; font-size:28rpx; color:#fca000; line-height:80rpx; height:80rpx;}
-.dshuoBtn{ width:156rpx; height:56rpx; margin-top:10rpx; border:2rpx solid #ff3b3b; font-size:24rpx; color:#ff3b3b; text-align:center; line-height:56rpx; float: right; border-radius: 30rpx;}
+.dshuoBtn{margin-top:10rpx; border:2rpx solid #ff3b3b; font-size:24rpx; color:#ff3b3b; text-align:center; line-height:56rpx; float: right; border-radius: 30rpx;}
 .orderImgCon{width:160rpx;height:160rpx;}
 .oListPrice_1{ display: block; font-size:26rpx;color:#333;}
 .oListNum{ display: block; font-size:26rpx;color:#333;}

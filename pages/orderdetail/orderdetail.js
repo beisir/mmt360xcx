@@ -22,7 +22,7 @@ Page({
       }
     }).then( res => {
       if (res.errcode === 0){
-        console.log(res)
+        // console.log(res)
         that.setData({
           orderDetail: res.data.orderDetail,
           orderCode: options.orderCode

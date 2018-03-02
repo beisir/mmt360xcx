@@ -4,11 +4,10 @@
     <block wx:for="{{lstResult}}" wx:key="{{index}}">
       <view class='proCon' data-bcid="{{item.bcid}}" bindtap="goDetail">
         <view class='proImgCon'>
-          <!-- <image class='proImg' src='https://mp.weixin.qq.com/debug/wxadoc/dev/image/cat/0.jpg?t=201822'></image> -->
-           <image class='proImg' lazy-load="true" src='{{item.bcPicPath?item.bcPicPath:errImg}}' data-index="{{index}}" binderror="errImgEvent" /> 
+          <image class='proImg' lazy-load="true" src='{{item.bcPicPath?item.bcPicPath:errImg}}' data-index="{{index}}" binderror="errImgEvent" /> 
         </view>   
         <text class="til">{{item.title}}</text>
-        <view class="price" wx:if="{{item.price === 0}}">
+        <view class="price" wx:if="{{item.price === 0 || item.isTrade === '0'}}">
           <text class='allprice'>面议</text>
         </view>
         <view class="price" wx:else>

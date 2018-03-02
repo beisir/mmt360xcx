@@ -6,11 +6,11 @@
             <image class='proImg' lazy-load="true" data-index="{{index}}" src="{{item.bcPicPath?item.bcPicPath:errImg}}" binderror="errImgEvent" />
       </view> 
       <text class="protil">{{item.title}}</text>
-      <view class="price" wx:if="{{item.price == 0}}">
+      <view class="price" wx:if="{{item.price == 0 || item.isTrade === '0'}}">
         <text class='allprice'>面议</text>
       </view>
       <view class="price" wx:else>
-        ￥<text class='allprice'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
+      ￥<text class='allprice'>{{tools.priceFoalt(item.price,0)}}.</text>{{tools.priceFoalt(item.price,1)}}
       </view>
     </view>
   </block>

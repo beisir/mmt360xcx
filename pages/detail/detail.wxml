@@ -8,7 +8,7 @@
             autoplay="true">
       <block wx:for="{{picUrls}}" wx:key="{{index}}">
          <swiper-item>
-            <image class="proImgBoxImg" mode="aspectFit" src="https:{{item.picUrl300}}" />
+            <image class="proImgBoxImg" mode="aspectFill" src="https:{{item.picUrl300}}" />
          </swiper-item> 
       </block>
     </swiper>   

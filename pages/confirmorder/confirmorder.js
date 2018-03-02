@@ -88,6 +88,7 @@ Page({
             signType: 'MD5',
             paySign: paySign,
             success: function (res) {
+              console.log(res);
               // 如果支付成功 发送推送消息模板
               let prepay_id = wxpackage.split('=')[1];
               if (res.errMsg.includes('ok')){
@@ -101,6 +102,7 @@ Page({
                     sign: 0
                   }
                 }).then(result => {
+                  console.log(result);
                   wx.showToast({
                     title: '支付成功'
                   });

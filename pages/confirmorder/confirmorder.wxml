@@ -1,10 +1,10 @@
-<wxs src="../../utils/filter.wxs" module="tools" />
+   <wxs src="../../utils/filter.wxs" module="tools" />
 <view class="container">
-  <navigator class='addressBox' url="../address/address" wx:if="{{status}}">
+  <navigator class='addressBox' url="../address/address?refer=order" wx:if="{{status}}">
     <view class='consignee'>收货人：{{address.userName}}</view>
     <view class='addressCon'>收货地址：{{address.address}}</view>
   </navigator >
-  <navigator class='addressBox' url="../address/address" wx:else>
+  <navigator class='addressBox' url="../address/address?refer=order" wx:else>
     <view class='noaddress'>您还没有设置收货地址，请设置地址</view>
   </navigator>
   <view class='proBox'>

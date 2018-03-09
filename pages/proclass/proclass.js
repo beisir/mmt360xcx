@@ -95,5 +95,12 @@ Page({
     wx.navigateTo({
       url: `../class/class?seriesid=${seriesid}&seriesname=${seriesname}`
     });
+  },
+  /**
+   * [onPullDownRefresh() 下拉刷新页面]
+   * [-------------------------------------------------]
+   */
+  onPullDownRefresh() {
+    this.onLoad();
   }
 });

@@ -1,4 +1,4 @@
- .manageTop{ height:282rpx; background: url(https://style.org.hc360.com/images/microMall/program/manageTopBg.png) 0 0; background-size: 750rpx 340rpx; padding-top: 58rpx;} 
+.manageTop{ height:282rpx; background: url(https://style.org.hc360.com/images/microMall/program/manageTopBg.png) 0 0; background-size: 750rpx 340rpx; padding-top: 58rpx;} 
 .manageTopImg{ border:6rpx solid #ff8989;width:135rpx;height:135rpx;margin: 0 auto; border-radius: 50%;overflow: hidden;}
 .userName{text-align:center; color:#fff; font-size:34rpx; display: block; padding:26rpx 30rpx 0;}
 .logoImg{ max-height: 135rpx; max-width: 135rpx;}

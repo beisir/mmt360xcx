@@ -13,11 +13,12 @@ Page({
    * [onLoad: 获取登录信息 openid ]
    * [-------------------------------------------------]
    */
-  onLoad: function () {
+  onLoad: function (options) {
     let that = this;
     app.AppLogin().then(res => {
       this.setData({
-        openid: res.openid
+        openid: res.openid,
+        refer: options.refer
       });
       that.getAddress();
     }).catch(err => {
@@ -49,6 +50,17 @@ Page({
       });
     });
   }, 
+  comfirmAddress (e){
+    let { refer, addressList} = this.data,
+      index = e.currentTarget.dataset.index;
+    wx.setStorage({
+      key: 'newAddress',
+      data: addressList[index],
+      success (){
+        wx.navigateBack({ changed: true }); 
+      }
+    });
+  },
   /**
    * [addAddress: 获取添加地址权限 ]
    * [-------------------------------------------------]
@@ -58,19 +70,27 @@ Page({
     wx.getSetting({     // 检测是否授权地址权限
       success(res) {
         // 如果地址权限不同意授权
-        if (!res.authSetting['scope.address']) {
-          wx.authorize({
-            scope: 'scope.address',
-            success(options) {
-              if (options.errMsg.includes('ok')){
-                that.addressInfo(); // 调用微信地址授权框
-              };
+        let scopeAddress = res.authSetting['scope.address']
+        console.log(scopeAddress === undefined);
+        // if (scopeAddress === undefined){
+        //   wx.authorize({
+        //     scope: 'scope.address',
+        //     success(options) {
+        //       if (options.errMsg.includes('ok')) {
+        //         that.addressInfo(); // 调用微信地址授权框
+        //       };
+        //     }
+        //   }); 
+        // } else if (scopeAddress === false){
+          wx.openSetting({
+            success (res){
+              that.addressInfo();
             }
-          })
-        } else {
-          that.addressInfo();
-        }
-      }
+          });
+        // } else {
+            that.addressInfo();
+        // } 
+      }  
     });
   },
   /**
@@ -84,6 +104,7 @@ Page({
     let addressList = this.data.addressList;
     wx.chooseAddress({
       success(options) {
+        // console.log(options);
         let addressList = that.data.addressList;
         // 拼接地址参数
         let addressOptions = {

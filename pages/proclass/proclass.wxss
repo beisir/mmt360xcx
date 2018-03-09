@@ -1,5 +1,4 @@
 /* pages/proclass/proclass.wxss */
-
 .otherClass .allClass{height:90rpx;line-height:90rpx;background:#fff;padding:0 25rpx;font-size:32rpx;color:#333;margin:20rpx 0;position:relative;border-bottom:none;}
 .leftAroow{
   width:25rpx;

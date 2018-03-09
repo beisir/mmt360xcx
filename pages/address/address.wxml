@@ -2,7 +2,7 @@
 <view class="container">
   <view class='addressBox' wx:if="{{addressList.length}}">
     <block wx:for="{{addressList}}" wx:key="{{index}}">
-    <view class='addressCon'>
+    <view class='addressCon' data-index="{{index}}" bindtap="{{refer === 'order' ? 'comfirmAddress' : ''}}">
       <view class='nameTel'>
         <text class='nameCon'>{{item.userName}}</text>
         <text class='telCon'>{{item.telNumber}}</text>
@@ -10,10 +10,10 @@
       <view class='addressTxt'>
         {{item.address}}
       </view>
-      <view class='operationBox'>
-        <view class="choice" bindtap="selectChoice" data-index="{{index}}">
+      <view class='operationBox' >
+        <view class="choice" catchtap="selectChoice" data-index="{{index}}">
           <label class="choiceInput {{item.status ? 'seleInput' :''}}"></label>默认地址</view>
-        <view class='operationBtn' bindtap="dleAddress" data-index="{{index}}">
+        <view class='operationBtn' catchtap="dleAddress" data-index="{{index}}">
           <icon class='delBtn'></icon>删除</view>
       </view>
     </view>

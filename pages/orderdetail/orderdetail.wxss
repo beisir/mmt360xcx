@@ -1,4 +1,4 @@
- .addressLeft{float:left;position:relative;padding-left:40rpx;background: url(https://style.org.hc360.com/images/microMall/manage/manageIco.png) no-repeat -573rpx -557rpx;background-size: 600rpx 600rpx;} 
+.addressLeft{float:left;position:relative;padding-left:40rpx;background: url(https://style.org.hc360.com/images/microMall/manage/manageIco.png) no-repeat -573rpx -557rpx;background-size: 600rpx 600rpx;} 
 .addressTel{padding-left:30rpx;}
 .addressUser{font-size:28rpx;color:#333;font-weight:normal;}
 .wxAddressBox{padding:25rpx 20rpx 20rpx;line-height:36rpx;color:#666;overflow: hidden;background: #fff;margin-bottom:20rpx;}

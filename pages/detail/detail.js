@@ -1,5 +1,5 @@
 const app = getApp();
-const { ajax, path } = require('../../utils/util.js');
+const { ajax, path, errImg} = require('../../utils/util.js');
 const WxParse = require('../../wxParse/wxParse.js');
 Page({
   /**
@@ -17,6 +17,7 @@ Page({
     detailOptions: [],  // 请求产品参数存储列表 
     detailTop: {},
     picUrls: [],  // 详情页面轮播图
+    newpicUrls: [],
     businChance: {  // 
       price:0
     },
@@ -107,13 +108,16 @@ Page({
       url: path.detail.supply + result.bcid
     }).then(data => {
       // console.log(data);
+      let newpicUrls = data.picUrls.map(item=>'https:' + item.bigPicUrl);
       that.setData({
         detailTop: data, // 设置详情列表
         picUrls: data.picUrls || [], // 设置轮播图片列表
         businChance: data.wechatBusinChance, // 设置价格 title等参数
-        detailOptions: data.businAttList || [] // 设置参数列表
+        detailOptions: data.businAttList || [], // 设置参数列表
+        newpicUrls: newpicUrls || [errImg] //设置图片轮播放大
       });
     });
+    
   },
   /**
    * [onReady() 初次进入页面选择cur默认 计算宽度,距离左边距离 ]
@@ -320,5 +324,13 @@ Page({
     };
     // console.log(shareObj);
     return shareObj;
+  },
+  imgInfo(e){
+    let index = e.currentTarget.dataset.index,
+      newpicUrls = this.data.newpicUrls;
+    wx.previewImage({
+      current: newpicUrls[index], // 当前显示图片的http链接
+      urls: newpicUrls // 需要预览的图片http链接列表
+    });
   }
 });

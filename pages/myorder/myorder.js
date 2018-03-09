@@ -27,6 +27,7 @@ Page({
    * [-------------------------------------------------]
    */
   onLoad: function (options) {
+    wx.removeStorageSync('newAddress');
     let openid = app.globalData.openid, // 买家id
       appid = app.globalData.panyData.appid;  // 商户id
     this.setData({

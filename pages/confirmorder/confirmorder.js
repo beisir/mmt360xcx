@@ -8,7 +8,7 @@ Page({
   data: {
     status: false,  // 控制当前地址是否显示
     address: '',  // 存储默认数据
-    shopCarList: [],  // 存储确认订单数据列表
+    shopCarList: [],  // 存储确认订单数据列
     order: {    // 订单参数
       appid: "",    // appid
       headimg: "",  // 买家头像
@@ -65,8 +65,10 @@ Page({
     let setTlement = {    // 拼接参数发送后台
       order: order,
       proList: shopCarList,
-      source: source
+      source: source,
+      addrid: address.id
     };
+    // console.log(setTlement)
     // 应为数据量有些大，发送后台参数为JSON字符串
     setTlement = JSON.stringify(setTlement);  
     if (address !== '' ){ // 如果地址不为空  ,则直接发送请求
@@ -78,6 +80,7 @@ Page({
         }
       }).then(result => { // 成功回调
         if (result.errcode === 0){
+          // console.log(result)
           // 结构返回参数
           let { timestamp, noncestr, wxpackage, paySign } = result.payInfo;
           // 唤起微信支付
@@ -88,7 +91,7 @@ Page({
             signType: 'MD5',
             paySign: paySign,
             success: function (res) {
-              console.log(res);
+              // console.log(res);
               // 如果支付成功 发送推送消息模板
               let prepay_id = wxpackage.split('=')[1];
               if (res.errMsg.includes('ok')){
@@ -116,14 +119,14 @@ Page({
             fail: function (res) {
               // console.log(res);
               wx.showToast({
-                title: '支付失败',
+                title: '支付失败，请重试',
                 icon: 'none'
               });
             }
           });
         } else {
           wx.showToast({
-            title: '结算失败',
+            title: '结算失败，请重试',
             icon: 'none'
           });
         }
@@ -142,14 +145,25 @@ Page({
    */
   onShow: function () {
     // 当页面显示 获取本地存储默认地址
-    let address = wx.getStorageSync('address');
+    let address = wx.getStorageSync('address'),
+      newAddress = wx.getStorageSync('newAddress'),
+      addressString = '';
     let status = true;
     if (address === '') {
       status = false;
+    } else {
+      if (newAddress !== ''){
+        addressString = newAddress;
+      } else {
+        addressString = address;
+      } 
     };
     this.setData({
-      address: address,
+      address: addressString,
       status: status
     });
+  },
+  onUnload (){
+    wx.removeStorageSync('newAddress');
   }
 })

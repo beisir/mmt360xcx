@@ -1,6 +1,5 @@
 /* shopcart.wxss */
 /* .container {height:100%;} */
-
 .operation{height:90rpx;line-height:90rpx;font-size:30rpx;color:#333;text-align:right;background:#f8f8f8;padding:0 25rpx;}
 .operation a{color:#333;text-decoration:none;}
 

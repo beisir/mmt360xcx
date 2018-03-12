@@ -71,25 +71,25 @@ Page({
       success(res) {
         // 如果地址权限不同意授权
         let scopeAddress = res.authSetting['scope.address']
-        console.log(scopeAddress === undefined);
-        // if (scopeAddress === undefined){
-        //   wx.authorize({
-        //     scope: 'scope.address',
-        //     success(options) {
-        //       if (options.errMsg.includes('ok')) {
-        //         that.addressInfo(); // 调用微信地址授权框
-        //       };
-        //     }
-        //   }); 
-        // } else if (scopeAddress === false){
+        // console.log(scopeAddress === undefined);
+        if (scopeAddress === undefined){
+          wx.authorize({
+            scope: 'scope.address',
+            success(options) {
+              if (options.errMsg.includes('ok')) {
+                that.addressInfo(); // 调用微信地址授权框
+              };
+            }
+          }); 
+        } else if (scopeAddress === false){
           wx.openSetting({
             success (res){
               that.addressInfo();
             }
           });
-        // } else {
-            that.addressInfo();
-        // } 
+        } else {
+          that.addressInfo();
+        } 
       }  
     });
   },

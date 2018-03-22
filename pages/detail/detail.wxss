@@ -28,9 +28,9 @@ position: relative;
 .homeBtn:before,.serviceBtn:before,.telBtn:before{ content:"";height:60rpx;width:60rpx; display: block; margin: 0 auto;background:url(https://style.org.hc360.com/images/microMall/program/detailIco.png) no-repeat;}
 .gwcBtn{ float: left; font-size:30rpx;background: #fca000; text-align: center;height:98rpx; line-height: 98rpx; color: #fff;width:27.5%;}
 .buyBtn{ float: left; font-size:30rpx;background: #ff3b3b; text-align: center;height:98rpx; line-height: 98rpx; color: #fff;width:27.5%;}
-.homeBtn:before{ background-position: 6px -72rpx;background-size:300rpx 600rpx;}
-.serviceBtn:before{ background-position: 6px -144rpx;background-size:300rpx 600rpx;}
-.telBtn:before{ background-position:6px -212rpx;background-size:300rpx 600rpx;}
+.homeBtn:before{ background-position: 12rpx -72rpx;background-size:300rpx 600rpx;}
+.serviceBtn:before{ background-position: 12rpx -144rpx;background-size:300rpx 600rpx;}
+.telBtn:before{ background-position:10rpx -212rpx;background-size:300rpx 600rpx;}
 .detailFont{line-height: 40rpx; font-size:26rpx; color: #333; padding:25rpx; clear: both; overflow:hidden; text-indent: 2em;}
 .parameterBox{overflow: hidden; font-size: 24rpx; color: #333; line-height: 40rpx;}
 .tr{ border-top: 1rpx solid #ddd; min-height: 80rpx;}

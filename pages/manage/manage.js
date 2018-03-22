@@ -6,19 +6,31 @@ Page({
    */
   data: {
     nickName: '',
-    avatarUrl: ''
+    avatarUrl: '',
+    phoneNum: ''
   },
   /**
-   * [onLoad() 获取登陆授权]
+   * [calling() 客服电话]
    * [-------------------------------------------------]
    */
-  onLoad: function (options) {
+  calling (){
+    let phoneNum = this.data.phoneNum;
+    wx.makePhoneCall({
+      phoneNumber: phoneNum,
+    });
+  },
+  /**
+   * [authorization() 点击头像区域重新授权]
+   * [-------------------------------------------------]
+   */
+  onLoad (){
     let that = this;
     app.AppLogin().then(res => {
       // 设置头像 and 微信名称 
       that.setData({
         nickName: res.info.nickName,
-        avatarUrl: res.info.avatarUrl
+        avatarUrl: res.info.avatarUrl,
+        phoneNum: app.globalData.phoneNum
       });
     }).catch(err => {
       wx.showToast({
@@ -26,21 +38,5 @@ Page({
         icon: 'none'
       });
     });
-  },
-  /**
-   * [calling() 客服电话]
-   * [-------------------------------------------------]
-   */
-  calling (){
-    wx.makePhoneCall({
-      phoneNumber: '400-6360-888',
-    });
-  },
-  /**
-   * [authorization() 点击头像区域重新授权]
-   * [-------------------------------------------------]
-   */
-  authorization (){
-    this.onLoad();  
   }
 })

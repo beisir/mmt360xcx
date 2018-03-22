@@ -35,11 +35,11 @@
         </block>
         <view class="dOrderConBot">
             <view class="orderDetail2">
-                <view class="totalPrice"><text class="totalPriceFont">商品总额</text><text class="totalPriceNum">¥ {{orderDetail.order.orderTotalAmout}}</text></view>
+                <view class="totalPrice"><text class="totalPriceFont">商品总额</text><text class="totalPriceNum">¥ {{AmoutSum}}</text></view>
                  <view class="freightCon"><text class="freightFont">运费</text><text class="freightPrice">¥ 0.00</text></view> 
             </view>
         </view>
-        <view class="orderDetailBot2">应付总额：<text class="totalPriceCon">¥ {{orderDetail.order.orderTotalAmout}}</text></view>
+        <view class="orderDetailBot2">应付总额：<text class="totalPriceCon">¥ {{totalAmout}}</text></view>
         <view class="dOrderConBot">
             <view class="orderDetail2">
                 <view class="totalPrice"><text class="totalPriceFont">订单编号</text><text class="totalPriceNum">{{orderDetail.order.orderCode}}</text></view>

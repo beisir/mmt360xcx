@@ -21,7 +21,7 @@ Page({
     businChance: {  // 
       price:0
     },
-    phoneNum: '400-6360-888'
+    phoneNum: ''
   },
   /**
    * [onLoad() 初始调用数据  有三个接口 ]
@@ -34,7 +34,8 @@ Page({
     // res: extJSON 中appid and imid ; mmtinfo: 商家信息
     app.userInfoReadyCallback((res,mmtinfo) => {
       that.setData({
-        mchid: mmtinfo.mchid
+        mchid: mmtinfo.mchid,
+        phoneNum: app.globalData.phoneNum
       });
     });
     this.setData({
@@ -117,7 +118,6 @@ Page({
         newpicUrls: newpicUrls || [errImg] //设置图片轮播放大
       });
     });
-    
   },
   /**
    * [onReady() 初次进入页面选择cur默认 计算宽度,距离左边距离 ]

@@ -21,6 +21,7 @@ App({
         // console.log(err);
       });
     });
+    this.getPhone();
   },
   /**
    * [AppLogin 封装 检测当前用户是否登陆成功 and 授权成功 ]
@@ -162,12 +163,31 @@ App({
       callback(that.globalData.panyData, opt, that.globalData.openId);
     });
   },
+  /**
+   * [getPhone() 获取用户电话信息]
+   * [-------------------------------------------------]
+   */
+  getPhone() {
+    let that = this;
+    ajax({
+      url: path.app.mysite
+    }).then(res => {
+      let dataString = res.replace(/^null\(|\)$/g, '');
+      let dataObject = JSON.parse(dataString);
+      if (dataString.state == 0) {
+        that.getPhone();
+      } else {
+        that.globalData.phoneNum = dataObject.company.mp || dataObject.company.telephone;
+      }
+    });
+  },
   globalData: {
     userInfo: null, // 微信登陆用户信息
     panyData: wx.getExtConfigSync(), // extJSON 第三方模板参数
     mmtInfo: wx.getStorageSync('mmtInfo'),  // 微信登陆用户信息
     companyInfo: {}, // 储存公司信息
     mchid: {},  // 公司是否支持mchid 信息
-    openid: {}  
+    openid: {},
+    phoneNum: ''
   }
 })

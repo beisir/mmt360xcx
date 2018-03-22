@@ -1,6 +1,6 @@
 <view class="container">
   <view class="manageTop" bindtap="onLoad">
-    <view class="manageTopImg" bindtap="authorization"><image class="logoImg" src="{{avatarUrl ? avatarUrl :'https://style.org.hc360.com/images/microMall/program/mGrayLogo.png'}}" ></image></view>
+    <view class="manageTopImg"><image class="logoImg" src="{{avatarUrl ? avatarUrl :'https://style.org.hc360.com/images/microMall/program/mGrayLogo.png'}}" ></image></view>
     <text class="userName">{{nickName ? nickName : '请授权登录'}}</text>
   </view>
 <!-- <view class="manageTop">
@@ -32,7 +32,7 @@
     </navigator>
     <view class="serTel" bindtap="calling">
       <text class="serTelCon">客服电话</text>
-      <text class="serTelRig">400-6360-888</text>
+      <text class="serTelRig">{{phoneNum}}</text>
     </view>
   </view>
 </view>

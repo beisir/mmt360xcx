@@ -27,7 +27,7 @@
 /* 数量 */
 .amountBox{position:absolute;right:25rpx;bottom:20rpx;width:175rpx;height:48rpx;display:flex;}
 .number{width:79rpx;height:46rpx;border:1rpx solid #ddd;}
-.numInput{height:42rpx;line-height:42rpx;font-size:24rpx;color:#333;text-align:center;margin-top:-4rpx;overflow:hidden;}
+.numInput{height:42rpx;line-height:42rpx;font-size:24rpx;color:#333;text-align:center; box-sizing:border-box;overflow:hidden;}
 .amountDown{width:46rpx;height:46rpx;border:1px solid #ddd;border-right:0;border-top-left-radius:2rpx;border-bottom-left-radius:2rpx;background:url(https://style.org.hc360.com/images/microMall/program/aIcon1.png) no-repeat -165rpx -58rpx;background-size:200rpx 500rpx;display:block;}
 .amountReduce{width:46rpx;height:46rpx;border:1rpx solid #ddd;border-right:0;border-top-left-radius:2rpx;border-bottom-left-radius:2rpx;background:url(https://style.org.hc360.com/images/microMall/program/aIcon1.png) no-repeat -165rpx -138rpx;background-size:200rpx 500rpx;display:block;}
 .amountUp{width:46rpx;height:46rpx;border:1rpx solid #ddd;border-left:0;border-top-right-radius:2rpx;border-bottom-right-radius:2rpx;background:url(https://style.org.hc360.com/images/microMall/program/aIcon1.png) no-repeat -165rpx 10rpx;background-size:200rpx 500rpx;display:block;}

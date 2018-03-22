@@ -130,7 +130,8 @@ const config = {
 const httpPath = {
   app: {
     login: `${hostname}/index/login?appid=${extJSON.appid}`, // 登陆
-    getAppConfigInfo: `${hostname}/wx/getAppConfigInfo?imid=${extJSON.imid}` // 获取公司信息以及是否显示价格
+    getAppConfigInfo: `${hostname}/wx/getAppConfigInfo?imid=${extJSON.imid}`, // 获取公司信息以及是否显示价格
+    mysite: `https://wsdetail.b2b.hc360.com/mysite/${extJSON.imid}` // 取公司客服电话
   },
   index: {
     recommend: `${hostname}/busin/recommend/${extJSON.imid}`,  // 获取首页数据

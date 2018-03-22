@@ -7,7 +7,9 @@ Page({
   data: {
     // 当前订单信息
     orderDetail: {},
-    orderCode: ''
+    orderCode: '',
+    AmoutSum: 0,
+    totalAmout: 0
   },
   /**
    * [onLoad(): options 订单orderCode 查询订单详情 ]
@@ -27,12 +29,26 @@ Page({
           orderDetail: res.data.orderDetail,
           orderCode: options.orderCode
         });
+        that.getAmoutSum(res.data.orderDetail);
       }
     }).catch(err => {
       wx.showToast({
         title: '查询失败',
         icon: 'none'
       });
+    });
+  },
+  getAmoutSum(orderDetail){
+    let prodList = orderDetail.prodList,
+      orderFareAmount = orderDetail.order.orderFareAmount,
+      orderTotalAmout = orderDetail.order.orderTotalAmout;
+    let sum = 0;
+    prodList.map(item => {
+      sum += item.bcNumber * item.bcUnitPrice;
+    });
+    this.setData({
+      AmoutSum: sum,
+      totalAmout: orderFareAmount + orderTotalAmout
     });
   },
   /**
